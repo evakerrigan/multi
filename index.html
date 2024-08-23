@@ -1,76 +1,70 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Таблица Умножения</title>
-    <link rel="stylesheet" href="./src/style.css" />
-  </head>
-  <body>
-    <div id="app">
-      <input type="number" id="firstNumber" placeholder="" />
-      <span> x </span>
-      <input type="number" id="secondNumber" placeholder="" />
-      <button id="done" onclick="checkAnswer()">=</button>
-      <input type="number" id="answer" placeholder="" />
-      <p id="message"></p>
-      <footer class="page-footer">
-        <div class="footer-container">
-          <div class="footer-content">
-            <p>Выберите число, умножение на которое надо выучить</p>
-            <ul>
-              <li>0</li>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-            </ul>
-          </div>
-          <div class="footer-content">
-            <p>Выберите количество успешных попыток:</p>
-            <input type="number" id="attempts" />
-          </div>
-          <div class="footer-content">
-            <p>
-              Всего попыток:
-              <span id="attempts-count-temp" class="attempts-count temp">
-                0</span
-              >
-            </p>
-            <p>
-              Успешных:
-              <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
-            </p>
-            <p>
-              Неудачных:
-              <span id="attempts-count-not" class="attempts-count not"> 0</span>
-            </p>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Таблица Умножения</title>
+  <script type="module" crossorigin src="./assets/index-uJ1WY8Cq.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B2sHK77v.css">
+</head>
+
+<body>
+  <div id="app">
+    <input type="number" id="firstNumber" placeholder="" />
+    <span> x </span>
+    <input type="number" id="secondNumber" placeholder="" />
+    <button id="done" onclick="checkAnswer()">=</button>
+    <input type="number" id="answer" placeholder="" />
+    <p id="message"></p>
+    <footer class="page-footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <p>Выберите число, умножение на которое надо выучить</p>
+          <ul>
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+          </ul>
         </div>
-      </footer>
-    </div>
-    <!-- Модальное окно -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <h2>Поздравляем!</h2>
-        <p>Вы успешно выполнили задание.</p>
-        <button id="closeModal">Закрыть</button>
+        <div class="footer-content">
+          <p>Выберите количество успешных попыток:</p>
+          <input type="number" id="attempts" />
+        </div>
+        <div class="footer-content">
+          <p>
+            Всего попыток:
+            <span id="attempts-count-temp" class="attempts-count temp">
+              0</span>
+          </p>
+          <p>
+            Успешных:
+            <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
+          </p>
+          <p>
+            Неудачных:
+            <span id="attempts-count-not" class="attempts-count not"> 0</span>
+          </p>
+        </div>
       </div>
+    </footer>
+  </div>
+  <!-- Модальное окно -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Поздравляем!</h2>
+      <p>Вы успешно выполнили задание.</p>
+      <button id="closeModal">Закрыть</button>
     </div>
+  </div>
 
-    <script type="module">
-      import {checkAnswer, handleListClick} from './src/app.ts';
+</body>
 
-      document.querySelectorAll('#app li').forEach((li) => {
-        li.addEventListener('click', (event) => {
-          handleListClick(event);
-        });
-      });
-    </script>
-  </body>
 </html>
