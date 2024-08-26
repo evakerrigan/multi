@@ -1,9 +1,12 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI';
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
+  background-color: #f9f9fa;
+  color: #5e676f;
 }
 
 #app {
@@ -20,21 +23,46 @@ button {
   cursor: pointer;
 }
 
-#answer {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
 input[type='number'] {
-  width: 50px;
-  height: 50px;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: #fff;
-  border: 1px solid #ccc;
   text-align: center;
+}
+
+.multi-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+.multi-input {
+  min-height: 50px;
+  width: 50%;
+  max-width: 200px;
+  aspect-ratio: 1;
+  font-size: 5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: none;
+  color: #14bae4;
+  font-family: 'Segoe UI';
+}
+
+.footer-input {
+  height: 50px;
+  width: 50px;
+  font-size: 2rem;
+  aspect-ratio: 1;
+  color: #a2a2a2;
+  font-family: 'Segoe UI';
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: none;
 }
 
 /* Скрытие стрелок скроллбара */
@@ -44,9 +72,9 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
-input[type='number'] {
+/* input[type='number'] {
   -moz-appearance: textfield;
-}
+} */
 
 .page-footer {
   position: fixed;
@@ -80,12 +108,12 @@ li {
 }
 
 .list-item-selected {
-  background-color: rgba(
-    52,
-    199,
-    77,
-    0.367
-  );
+  background-color: rgba(52, 199, 77, 0.367);
+}
+
+.attempts-container {
+  display: flex;
+  align-items: center;
 }
 .attempts-count.yes {
   color: green;
@@ -93,6 +121,10 @@ li {
 
 .attempts-count.not {
   color: red;
+}
+
+.attempts-part {
+  width: 50%;
 }
 
 .btn {
@@ -112,6 +144,14 @@ li {
   background-color: #45a049;
 }
 
+@media screen and (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+/* ******************** MODAL ******************** */
+
 .modal {
   display: none;
   position: fixed;
@@ -121,13 +161,13 @@ li {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); 
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
   position: relative;
   background-color: #fefefe;
-  margin: 35% auto; 
+  margin: 35% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;

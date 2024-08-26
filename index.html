@@ -7,11 +7,13 @@
   </head>
   <body>
     <div id="app">
-      <input type="number" id="firstNumber" placeholder="" />
-      <span> x </span>
-      <input type="number" id="secondNumber" placeholder="" />
-      <button id="done" onclick="checkAnswer()">=</button>
-      <input type="number" id="answer" placeholder="" />
+      <div class="multi-container">
+        <input type="number" id="firstNumber" class="multi-input" />
+        <span> x </span>
+        <input type="number" id="secondNumber" class="multi-input" />
+        <button id="done" onclick="checkAnswer()">=</button>
+        <input type="number" id="answer" class="multi-input" />
+      </div>
       <p id="message"></p>
       <footer class="page-footer">
         <div class="footer-container">
@@ -32,8 +34,10 @@
             </ul>
           </div>
           <div class="footer-content">
-            <p>Выберите количество успешных попыток:</p>
-            <input type="number" id="attempts" />
+            <div class="attempts-container">
+              <p class="attempts-part">Выберите количество успешных попыток:</p>
+              <input class="footer-input attempts-part" type="number" id="attempts" />
+            </div>
           </div>
           <div class="footer-content">
             <p>
