@@ -120,5 +120,12 @@ answerInput.addEventListener('keydown', (event) => {
   }
 });
 
+interface CustomWindow extends Window {
+  checkAnswer: () => void;
+  handleListClick: (event: MouseEvent) => void;
+}
+
+declare let window: CustomWindow;
+
 window.checkAnswer = checkAnswer;
 window.handleListClick = handleListClick;
