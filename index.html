@@ -3,8 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <title>Таблица Умножения</title>
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1, maximum-scale=1"
+    />
     <link rel="stylesheet" href="./src/style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6ZGXR7T40V"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-6ZGXR7T40V');
+    </script>
   </head>
+
   <body>
     <div id="app">
       <div class="multi-container">
@@ -36,7 +55,11 @@
           <div class="footer-content">
             <div class="attempts-container">
               <p class="attempts-part">Выберите количество успешных попыток:</p>
-              <input class="footer-input attempts-part" type="number" id="attempts" />
+              <input
+                class="footer-input attempts-part"
+                type="number"
+                id="attempts"
+              />
             </div>
           </div>
           <div class="footer-content">
