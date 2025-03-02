@@ -3,10 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <title>Таблица Умножения</title>
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6ZGXR7T40V"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-    <script type="module" src="./assets/index-t7C8Ssfm.js"></script>
-    <link rel="stylesheet" href="./assets/index-BoNIrpV8.css">
+      gtag('config', 'G-6ZGXR7T40V');
+    </script>
+    <script type="module" crossorigin src="/assets/index-t7C8Ssfm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BoNIrpV8.css">
   </head>
+
   <body>
     <div id="app">
       <div class="multi-container">
@@ -38,7 +56,11 @@
           <div class="footer-content">
             <div class="attempts-container">
               <p class="attempts-part">Выберите количество успешных попыток:</p>
-              <input class="footer-input attempts-part" type="number" id="attempts" />
+              <input
+                class="footer-input attempts-part"
+                type="number"
+                id="attempts"
+              />
             </div>
           </div>
           <div class="footer-content">
@@ -58,6 +80,7 @@
             </p>
           </div>
         </div>
+        <p>проверка деплоя</p>
       </footer>
     </div>
     <!-- Модальное окно -->
@@ -68,7 +91,6 @@
         <button id="closeModal">Закрыть</button>
       </div>
     </div>
-
-
+
   </body>
 </html>
