@@ -86,18 +86,19 @@ input[type='number']::-webkit-outer-spin-button {
   text-align: center;
 }
 
+.last-child {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 10px 20px;
+  justify-content: space-around;
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-}
-
-.last-child {
-  display: flex;
-  width: 100%;
-  padding: 10px 20px;
-  justify-content: space-around;
 }
 
 ul {
@@ -154,6 +155,13 @@ li {
 @media screen and (max-width: 900px) {
   .footer-container {
     flex-direction: column;
+  }
+  .last-child {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 20px;
+    justify-content: space-around;
   }
 }
 

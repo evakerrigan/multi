@@ -1,12 +1,12 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 
 export default defineConfig({
-  root: './', // Корневая директория проекта
+  root: './',
   build: {
-    outDir: 'dist', // Директория для сборки
+    outDir: 'dist'
   },
   server: {
     host: 'localhost',
-    port: 3000, // Порт для сервера разработки
-  },
+    port: 3000
+  }
 });
