@@ -25,15 +25,19 @@
   </head>
 
   <body>
-    <div id="app">
-      <div class="multi-container">
-        <input type="number" id="firstNumber" class="multi-input" />
-        <span> x </span>
-        <input type="number" id="secondNumber" class="multi-input" />
-        <button id="done" onclick="checkAnswer()">=</button>
-        <input type="number" id="answer" class="multi-input" />
+    <div id="app" class="app">
+      <div class="main">
+        <div class="main-container">
+          <div class="multi-container">
+            <input type="number" id="firstNumber" class="multi-input" />
+            <span> x </span>
+            <input type="number" id="secondNumber" class="multi-input" />
+            <button id="done" onclick="checkAnswer()">=</button>
+            <input type="number" id="answer" class="multi-input" />
+          </div>
+          <p id="message"></p>
+        </div>
       </div>
-      <p id="message"></p>
       <footer class="page-footer">
         <div class="footer-container">
           <div class="footer-content">

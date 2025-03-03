@@ -9,8 +9,21 @@ body {
   color: #5e676f;
 }
 
-#app {
+.app {
+  height: 100vh;
+  width: 100%;
+  /* background-color: #ff0000; */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 input[type='number'] {
@@ -77,9 +90,9 @@ input[type='number']::-webkit-outer-spin-button {
 } */
 
 .page-footer {
-  position: fixed;
+  /* position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   width: 100%;
   background-color: #f0f0f0;
   color: #333;
