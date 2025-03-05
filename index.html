@@ -1,129 +1,122 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Таблица Умножения</title>
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, maximum-scale=1"
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-6ZGXR7T40V"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
 
-      gtag('config', 'G-6ZGXR7T40V');
-    </script>
-    <script type="module" crossorigin src="/assets/index-DRrSH93G.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cn-oW3A4.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Таблица Умножения</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZGXR7T40V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-  <body>
-    <div id="app" class="app">
-      <div class="main">
-        <div class="main-container">
-          <div class="multi-container">
-            <input type="number" id="firstNumber" class="multi-input" />
-            <span> x </span>
-            <input type="number" id="secondNumber" class="multi-input" />
-            <button id="done" onclick="checkAnswer()">=</button>
-            <input type="number" id="answer" class="multi-input" />
-          </div>
-          <p id="message"></p>
+    gtag('config', 'G-6ZGXR7T40V');
+  </script>
+  <script type="module" crossorigin src="/assets/index-CVTbAOIo.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B8iBli_V.css">
+</head>
+
+<body>
+  <div id="app" class="app">
+    <div class="main">
+      <div class="main-container">
+        <div class="multi-container">
+          <input type="number" id="firstNumber" class="multi-input" />
+          <span> x </span>
+          <input type="number" id="secondNumber" class="multi-input" />
+          <button id="done" onclick="checkAnswer()">=</button>
+          <input type="number" id="answer" class="multi-input" />
         </div>
+        <p id="message"></p>
       </div>
-      <footer class="page-footer">
-        <div class="footer-container">
-          <div class="footer-content">
-            <p>Выберите число, умножение на которое надо выучить</p>
-            <ul class="footer-list">
-              <li>0</li>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-            </ul>
-          </div>
+    </div>
+    <footer class="page-footer">
+      <div class="footer-container">
+        <div class="footer-content first-child">
+          <p>Выберите число, умножение на которое надо выучить</p>
+          <ul class="footer-list">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+          </ul>
+        </div>
+        <div class="footer-content middle-child">
           <div class="footer-content">
             <div class="attempts-container">
               <p class="attempts-part">Введите количество<br> успешных попыток:</p>
-              <input
-                class="footer-input attempts-part"
-                type="number"
-                id="attempts"
-              />
+              <input class="footer-input attempts-part" type="number" id="attempts" />
             </div>
           </div>
           <div class="footer-content">
             <button id="start" onclick="startGame()" class="button-start">Старт</button>
           </div>
-          <div class="footer-content last-child">
-            <div>
-              Всего попыток:
-              <span id="attempts-count-temp" class="attempts-count temp">
-                0</span
-              >
-            </div>
-            <div>
-              Успешных:
-              <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
-            </div>
-            <div>
-              Неудачных:
-              <span id="attempts-count-not" class="attempts-count not"> 0</span>
-            </div>
+        </div>
+        <div class="footer-content last-child">
+          <div>
+            Всего попыток:
+            <span id="attempts-count-temp" class="attempts-count temp">
+              0</span>
+          </div>
+          <div>
+            Успешных:
+            <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
+          </div>
+          <div>
+            Неудачных:
+            <span id="attempts-count-not" class="attempts-count not"> 0</span>
           </div>
         </div>
-      </footer>
-    </div>
-    <!-- Модальное окно -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <h2>Поздравляем!</h2>
-        <p>Вы успешно выполнили задание.</p>
-        <button id="closeModal">Закрыть</button>
       </div>
+    </footer>
+  </div>
+  <!-- Модальное окно -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Поздравляем!</h2>
+      <p>Вы успешно выполнили задание.</p>
+      <button id="closeModal">Закрыть</button>
     </div>
+  </div>
 
-    <!-- Модальное окно с инструкцией -->
-    <div id="instructionButton" class="instruction-button">i</div>
+  <!-- Модальное окно с инструкцией -->
+  <div id="instructionButton" class="instruction-button">i</div>
 
-    <div id="instructionModal" class="modal-instruction">
-      <div class="modal-instruction-content">
-        <span class="close-instruction">&times;</span>
-        <p>
-          Приложение для заучивания таблицы умножения методом многократного
-          повторении одних и тех же примеров
-        </p>
-        <ul class="modal-instruction-description-list">
-          <li>Первый раз ребенок посчитает ответ.</li>
-          <li>Второй раз - также посчитает.</li>
-          <li>
-            На последующие повторения этого же примера он вспомнит: 
-            "Я же 5 минут назад уже
-            отвечал на этот пример, там было такое то число."
-          </li>
-        </ul>
-        <p>Инструкция:</p>
-        <ul class="modal-instruction-list">
-          <li>Выберите число (или числа), умножение на которое надо выучить.</li>
-          <li>Введите количество правильных попыток (рекомендую 100).</li>
-          <li>Нажать кнопку "Старт".</li>
-      </div>
+  <div id="instructionModal" class="modal-instruction">
+    <div class="modal-instruction-content">
+      <span class="close-instruction">&times;</span>
+      <p>
+        Приложение для заучивания таблицы умножения методом многократного
+        повторении одних и тех же примеров
+      </p>
+      <ul class="modal-instruction-description-list">
+        <li>Первый раз ребенок посчитает ответ.</li>
+        <li>Второй раз - также посчитает.</li>
+        <li>
+          На последующие повторения этого же примера он вспомнит:
+          "Я же 5 минут назад уже
+          отвечал на этот пример, там было такое то число."
+        </li>
+      </ul>
+      <p>Инструкция:</p>
+      <ul class="modal-instruction-list">
+        <li>Выберите число (или числа), умножение на которое надо выучить.</li>
+        <li>Введите количество правильных попыток (рекомендую 100).</li>
+        <li>Нажать кнопку "Старт".</li>
     </div>
+  </div>
 
-  </body>
+</body>
+
 </html>
