@@ -12,7 +12,6 @@ body {
 .app {
   height: 100vh;
   width: 100%;
-  /* background-color: #ff0000; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -62,7 +61,7 @@ input[type='number'] {
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   border: none;
-  color: #14bae4;
+  color: #6cade5;
   font-family: 'Segoe UI';
 }
 
@@ -85,18 +84,12 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* input[type='number'] {
-  -moz-appearance: textfield;
-} */
-
 .page-footer {
-  /* position: fixed;
-  left: 0;
-  bottom: 0; */
   width: 100%;
-  background-color: #f0f0f0;
   color: #333;
   text-align: center;
+  background-color: #282c35;
+  color: #6cade5;
 }
 
 .last-child {
@@ -108,6 +101,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,6 +114,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 li {
@@ -126,10 +122,13 @@ li {
   border: 1px solid #aaa;
   margin: 5px;
   cursor: pointer;
+  border: 1px solid #6cade5;
+  border-radius: 2px;
 }
 
 .list-item-selected {
   background-color: rgba(52, 199, 77, 0.367);
+  background-color: rgba(108, 173, 229, 0.367);
 }
 
 .attempts-container {
@@ -145,7 +144,7 @@ li {
 }
 
 .attempts-part {
-  width: 50%;
+  color: #adadad;
 }
 
 .btn {
@@ -175,6 +174,12 @@ li {
     width: 100%;
     padding: 10px 20px;
     justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .multi-input {
+    font-size: 4rem;
   }
 }
 
