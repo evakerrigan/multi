@@ -51,10 +51,10 @@ export function handleListClick(event: MouseEvent): void {
 
 function generateRandomNumberAndSetToSecondInput(): void {
   // if (!isNaN(parseInt(firstInput.value))) {
-    const randomNumber = Math.floor(Math.random() * 8) + 2;
+  const randomNumber = Math.floor(Math.random() * 8) + 2;
 
-    answerInput.value = '';
-    secondInput.value = randomNumber.toString();
+  answerInput.value = '';
+  secondInput.value = randomNumber.toString();
   // } else {
   //   console.error('Первое число должно быть числом для выполнения операции.');
   // }
@@ -129,3 +129,47 @@ declare let window: CustomWindow;
 
 window.checkAnswer = checkAnswer;
 window.handleListClick = handleListClick;
+
+// модалка с инструкцией
+document.addEventListener('DOMContentLoaded', () => {
+  // Your existing code...
+
+  // Add this line after your existing event listeners
+  document
+    .getElementById('instructionButton')
+    .addEventListener('click', openInstructionModal);
+
+  document.addEventListener('click', (event) => {
+    const closeBtn = event.target.closest('.close-instruction');
+    if (closeBtn) {
+      closeInstructionModal();
+    }
+  });
+});
+function openInstructionModal() {
+  const modalInstruction = document.getElementById('instructionModal');
+  if (modalInstruction) {
+    modalInstruction.style.display = 'flex';
+  }
+}
+
+function closeInstructionModal() {
+  const modal = document.getElementById('instructionModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+const input = document.getElementById('attempts');
+
+function blinkDigit() {
+  const digit = input.value.charAt(input.value.length - 1);
+  if (digit === '0') {
+    input.style.color = '#ff0000'; // Red color
+    setTimeout(() => {
+      input.style.color = ''; // Reset color
+    }, 500); // Blink every 500ms
+  }
+}
+
+input.addEventListener('input', blinkDigit);
