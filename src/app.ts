@@ -160,16 +160,20 @@ function closeInstructionModal() {
   }
 }
 
-const input = document.getElementById('attempts');
+function setupInputAnimation(inputElement: HTMLInputElement) {
+  const valueBlinker = document.createElement('span');
+  valueBlinker.textContent = '0';
+  valueBlinker.className = 'value-blinker';
 
-function blinkDigit() {
-  const digit = input.value.charAt(input.value.length - 1);
-  if (digit === '0') {
-    input.style.color = '#ff0000'; // Red color
-    setTimeout(() => {
-      input.style.color = ''; // Reset color
-    }, 500); // Blink every 500ms
-  }
+  inputElement.parentNode?.insertBefore(valueBlinker, inputElement.nextSibling);
+
+  inputElement.addEventListener('input', () => {
+    if (inputElement.value === '') {
+      valueBlinker.style.opacity = '1';
+    } else {
+      valueBlinker.style.opacity = '0';
+    }
+  });
 }
 
-input.addEventListener('input', blinkDigit);
+document.querySelectorAll('.footer-input').forEach(setupInputAnimation);

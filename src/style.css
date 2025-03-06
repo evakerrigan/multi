@@ -25,22 +25,24 @@ body {
   justify-content: center;
 }
 
-input[type='number'] {
-  margin: 10px;
-}
-
 button {
   padding: 10px 20px;
   cursor: pointer;
 }
 
+/* ******************** INPUT ОБЩИЙ  ******************** */
 input[type='number'] {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background-color: #fff;
-  text-align: center;
+  margin: 10px;
 }
+/* Скрытие стрелок скроллбара */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ******************** INPUT MULTI  ******************** */
 
 .multi-container {
   display: flex;
@@ -62,26 +64,86 @@ input[type='number'] {
   border: none;
   color: #6cade5;
   font-family: 'Segoe UI';
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  text-align: center;
 }
+
+/* ******************** INPUT В ФУТЕРЕ  ******************** */
 
 .footer-input {
   height: 50px;
   width: 50px;
+  position: relative;
   font-size: 2rem;
-  aspect-ratio: 1;
-  color: #a2a2a2;
   font-family: 'Segoe UI';
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   border: none;
+  background-color: #282c35;
+  border-bottom: 1px solid #aaa;
+  -moz-appearance: textfield;
+  padding: 0 5px 0 15px;
+  color: #6cade5;
 }
 
-/* Скрытие стрелок скроллбара */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.footer-input:focus {
+  outline: none;
 }
+
+/* ******************** стилизация мигающего INPUT в футере ******************** */
+
+.footer-input::placeholder {
+  font-size: 2rem;
+  color: transparent;
+  opacity: 0;
+  animation: blinkPlaceholder 1s ease-in-out infinite;
+}
+
+.footer-input::-webkit-input-placeholder { /* Chrome/Safari/Opera */
+  font-size: 2rem;
+  color: transparent;
+  opacity: 0;
+  animation: blinkPlaceholder 1s ease-in-out infinite;
+}
+
+.footer-input::-moz-placeholder { /* Firefox */
+  color: transparent;
+  opacity: 0;
+  animation: blinkPlaceholder 1s ease-in-out infinite;
+}
+
+.footer-input:-ms-input-placeholder { /* IE/Edge */
+  color: transparent;
+  opacity: 0;
+  animation: blinkPlaceholder 1s ease-in-out infinite;
+}
+
+@keyframes blinkValue {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.footer-input:placeholder-shown + .value-blinker {
+  animation: blinkValue 1s ease-in-out infinite;
+}
+
+/* Добавляем элемент для анимации */
+.footer-input + .value-blinker {
+  position: absolute;
+  top: 50%;
+  right: 17%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes blinkValue {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* ********************  ******************** */
 
 .page-footer {
   width: 100%;
@@ -107,6 +169,7 @@ input[type='number']::-webkit-outer-spin-button {
   align-items: center;
   padding: 10px 20px;
 }
+
 .first-child {
   max-width: 450px;
   word-break: break-all;
@@ -156,6 +219,8 @@ ul.modal-instruction-list {
 .attempts-container {
   display: flex;
   align-items: center;
+  color: #adadad;
+  position: relative;
 }
 .attempts-count.yes {
   color: green;
@@ -163,10 +228,6 @@ ul.modal-instruction-list {
 
 .attempts-count.not {
   color: red;
-}
-
-.attempts-part {
-  color: #adadad;
 }
 
 .btn {
@@ -220,32 +281,6 @@ ul.modal-instruction-list {
   .multi-input {
     font-size: 4rem;
   }
-}
-
-/* ******************** стилизация мигающего инпута в футере ******************** */
-
-.footer-input.attempts-part {
-  background-color: #333;
-  border: none;
-  outline: none;
-}
-
-.footer-input.attempts-part::placeholder {
-  color: #fff;
-}
-
-.footer-input.attempts-part:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-.footer-input.attempts-part::-webkit-inner-spin-button,
-.footer-input.attempts-part::-webkit-outer-spin-button {
-  appearance: none; /* Remove arrow */
-}
-
-.footer-input.attempts-part[type='number'] {
-  -moz-appearance: textfield; /* For Firefox */
 }
 
 /* ******************** MODAL ******************** */
