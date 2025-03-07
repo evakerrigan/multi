@@ -98,7 +98,7 @@ export function checkAnswer(): void {
 function openModal() {
   const modal = document.getElementById('modal');
   if (modal) {
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
   }
 }
 
