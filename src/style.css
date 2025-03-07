@@ -171,7 +171,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .first-child {
-  max-width: 450px;
+  max-width: 465px;
   word-break: break-all;
 }
 .middle-child {
@@ -179,7 +179,7 @@ input[type='number']::-webkit-outer-spin-button {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  max-width: 450px;
+  max-width: 465px;
 }
 
 ul {
@@ -267,7 +267,7 @@ ul.modal-instruction-list {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 450px;
+    max-width: 465px;
     padding: 10px 20px;
     align-items: center;
     justify-content: space-between;
