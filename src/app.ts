@@ -142,6 +142,8 @@ function closeModalSuccess() {
     answerInput.value = '';
     messageBlock.textContent = '';
     removeListItemSelectedClasses();
+    firstInput.removeAttribute('disabled');
+    secondInput.removeAttribute('disabled');
   }
 }
 
@@ -183,6 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelectorAll('.footer-input').forEach(setupInputAnimation);
+
+  const start = document.getElementById('start');
+  if (start) {
+    start.addEventListener('click', startGame);
+  }
 });
 
 function openInstructionModal() {
@@ -200,20 +207,7 @@ function closeInstructionModal() {
 }
 
 function startGame() {
-  // const firstInput = document.getElementById('firstNumber') as HTMLInputElement;
-  // const secondInput = document.getElementById('secondNumber') as HTMLInputElement;
-
-  // Включаем поля ввода
-  firstInput.disabled = true;
-  secondInput.disabled = true;
-
-  // Устанавливаем начальные значения
-  // setFirstInputValue(selectedNumbers);
-  // generateRandomNumberAndSetToSecondInput();
-
-  // Отключаем поля ввода после установки начальных значений
-  // setTimeout(() => {
-  //   firstInput.disabled = true;
-  //   secondInput.disabled = true;
-  // }, 100); // Добавляем небольшую задержку для позволения пользователю взаимодействовать
+  console.log('start');
+  firstInput.setAttribute('disabled', '');
+  secondInput.setAttribute('disabled', '');
 }
