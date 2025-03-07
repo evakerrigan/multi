@@ -140,6 +140,7 @@ function closeModalSuccess() {
     firstInput.value = '';
     secondInput.value = '';
     answerInput.value = '';
+    messageBlock.textContent = '';
     removeListItemSelectedClasses();
   }
 }
