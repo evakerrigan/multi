@@ -62,10 +62,10 @@ function setupInputAnimation(input: Element) {
     const blinker = document.createElement('span');
     blinker.className = 'value-blinker';
     blinker.textContent = '0';
-    
+
     // Добавляем элемент после инпута
     input.parentNode?.insertBefore(blinker, input.nextSibling);
-    
+
     // Обработчик изменения значения
     input.addEventListener('input', () => {
       blinker.style.display = input.value ? 'none' : 'block';
@@ -115,16 +115,20 @@ function openModal() {
   }
 }
 
-function closeModal() {
+function closeModalSuccess() {
   const modal = document.getElementById('modal');
   if (modal) {
     modal.style.display = 'none';
+    count = 0;
+    badCount = 0;
+    goodCount = 0;
+    selectedNumbers = [];
   }
 }
 
-const closeModalButton = document.getElementById('closeModal');
+const closeModalButton = document.getElementById('closeModalSuccess');
 if (closeModalButton !== null) {
-  closeModalButton.addEventListener('click', closeModal);
+  closeModalButton.addEventListener('click', closeModalSuccess);
 }
 
 answerInput.addEventListener('keydown', (event) => {
