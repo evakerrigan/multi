@@ -187,6 +187,11 @@ input[type='number']::-webkit-outer-spin-button {
   max-width: 465px;
   word-break: break-all;
 }
+
+.first-child p {
+  word-break: break-word;
+}
+
 .middle-child {
   display: flex;
   align-items: center;
