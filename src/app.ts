@@ -133,7 +133,7 @@ function closeModalSuccess() {
     badCount = 0;
     goodCount = 0;
     selectedNumbers = [];
-    attemptsElement.value = '0';
+    attemptsElement.value = '';
     attemptsCountTemp.textContent = '0';
     attemptsCountYes.textContent = '0';
     attemptsCountNot.textContent = '0';
@@ -197,4 +197,23 @@ function closeInstructionModal() {
   if (modal) {
     modal.style.display = 'none';
   }
+}
+
+function startGame() {
+  // const firstInput = document.getElementById('firstNumber') as HTMLInputElement;
+  // const secondInput = document.getElementById('secondNumber') as HTMLInputElement;
+
+  // Включаем поля ввода
+  firstInput.disabled = true;
+  secondInput.disabled = true;
+
+  // Устанавливаем начальные значения
+  // setFirstInputValue(selectedNumbers);
+  // generateRandomNumberAndSetToSecondInput();
+
+  // Отключаем поля ввода после установки начальных значений
+  // setTimeout(() => {
+  //   firstInput.disabled = true;
+  //   secondInput.disabled = true;
+  // }, 100); // Добавляем небольшую задержку для позволения пользователю взаимодействовать
 }
