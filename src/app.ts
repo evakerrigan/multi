@@ -144,8 +144,11 @@ function closeModalSuccess() {
     removeListItemSelectedClasses();
     firstInput.removeAttribute('disabled');
     secondInput.removeAttribute('disabled');
+    test();
   }
 }
+
+test();
 
 const closeModalButton = document.getElementById('closeModalSuccess');
 if (closeModalButton !== null) {
@@ -210,4 +213,18 @@ function startGame() {
   console.log('start');
   firstInput.setAttribute('disabled', '');
   secondInput.setAttribute('disabled', '');
+  test();
+}
+
+function test() {
+  if (attemptsElement) {
+    console.log('---------------------------------------------');
+    console.log('Input Element:', attemptsElement);
+
+    // Value property
+    console.log('Value:', attemptsElement.value);
+
+    // Attributes
+    console.log('Placeholder:', attemptsElement.placeholder);
+  }
 }
