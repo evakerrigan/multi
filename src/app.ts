@@ -50,14 +50,10 @@ export function handleListClick(event: MouseEvent): void {
 }
 
 function generateRandomNumberAndSetToSecondInput(): void {
-  // if (!isNaN(parseInt(firstInput.value))) {
   const randomNumber = Math.floor(Math.random() * 8) + 2;
 
   answerInput.value = '';
   secondInput.value = randomNumber.toString();
-  // } else {
-  //   console.error('Первое число должно быть числом для выполнения операции.');
-  // }
 }
 
 export function checkAnswer(): void {
@@ -132,9 +128,6 @@ window.handleListClick = handleListClick;
 
 // модалка с инструкцией
 document.addEventListener('DOMContentLoaded', () => {
-  // Your existing code...
-
-  // Add this line after your existing event listeners
   document
     .getElementById('instructionButton')
     .addEventListener('click', openInstructionModal);
