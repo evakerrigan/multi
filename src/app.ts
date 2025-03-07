@@ -56,6 +56,23 @@ function generateRandomNumberAndSetToSecondInput(): void {
   secondInput.value = randomNumber.toString();
 }
 
+function setupInputAnimation(input: Element) {
+  if (input instanceof HTMLInputElement) {
+    // Создаем элемент для мигающего курсора
+    const blinker = document.createElement('span');
+    blinker.className = 'value-blinker';
+    blinker.textContent = '0';
+    
+    // Добавляем элемент после инпута
+    input.parentNode?.insertBefore(blinker, input.nextSibling);
+    
+    // Обработчик изменения значения
+    input.addEventListener('input', () => {
+      blinker.style.display = input.value ? 'none' : 'block';
+    });
+  }
+}
+
 export function checkAnswer(): void {
   const expectedResult =
     parseInt(firstInput.value) * parseInt(secondInput.value);
@@ -128,17 +145,23 @@ window.handleListClick = handleListClick;
 
 // модалка с инструкцией
 document.addEventListener('DOMContentLoaded', () => {
-  document
-    .getElementById('instructionButton')
-    .addEventListener('click', openInstructionModal);
+  const instructionButton = document.getElementById('instructionButton');
+  if (instructionButton) {
+    instructionButton.addEventListener('click', openInstructionModal);
+  }
 
   document.addEventListener('click', (event) => {
-    const closeBtn = event.target.closest('.close-instruction');
-    if (closeBtn) {
-      closeInstructionModal();
+    if (event.target instanceof Element) {
+      const closeBtn = event.target.closest('.close-instruction');
+      if (closeBtn) {
+        closeInstructionModal();
+      }
     }
   });
+
+  document.querySelectorAll('.footer-input').forEach(setupInputAnimation);
 });
+
 function openInstructionModal() {
   const modalInstruction = document.getElementById('instructionModal');
   if (modalInstruction) {
@@ -152,21 +175,3 @@ function closeInstructionModal() {
     modal.style.display = 'none';
   }
 }
-
-function setupInputAnimation(inputElement: HTMLInputElement) {
-  const valueBlinker = document.createElement('span');
-  valueBlinker.textContent = '0';
-  valueBlinker.className = 'value-blinker';
-
-  inputElement.parentNode?.insertBefore(valueBlinker, inputElement.nextSibling);
-
-  inputElement.addEventListener('input', () => {
-    if (inputElement.value === '') {
-      valueBlinker.style.opacity = '1';
-    } else {
-      valueBlinker.style.opacity = '0';
-    }
-  });
-}
-
-document.querySelectorAll('.footer-input').forEach(setupInputAnimation);
