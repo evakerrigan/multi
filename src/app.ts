@@ -134,6 +134,7 @@ function closeModalSuccess() {
     goodCount = 0;
     selectedNumbers = [];
     attemptsElement.value = '';
+    setupInputAnimation(attemptsElement);
     attemptsCountTemp.textContent = '0';
     attemptsCountYes.textContent = '0';
     attemptsCountNot.textContent = '0';
@@ -144,11 +145,8 @@ function closeModalSuccess() {
     removeListItemSelectedClasses();
     firstInput.removeAttribute('disabled');
     secondInput.removeAttribute('disabled');
-    test();
   }
 }
-
-test();
 
 const closeModalButton = document.getElementById('closeModalSuccess');
 if (closeModalButton !== null) {
@@ -213,18 +211,4 @@ function startGame() {
   console.log('start');
   firstInput.setAttribute('disabled', '');
   secondInput.setAttribute('disabled', '');
-  test();
-}
-
-function test() {
-  if (attemptsElement) {
-    console.log('---------------------------------------------');
-    console.log('Input Element:', attemptsElement);
-
-    // Value property
-    console.log('Value:', attemptsElement.value);
-
-    // Attributes
-    console.log('Placeholder:', attemptsElement.placeholder);
-  }
 }
