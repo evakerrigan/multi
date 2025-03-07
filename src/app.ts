@@ -115,6 +115,16 @@ function openModal() {
   }
 }
 
+function removeListItemSelectedClasses() {
+  const elementsWithClass = document.querySelectorAll(
+    '[class*="list-item-selected"]'
+  );
+
+  elementsWithClass.forEach((element) => {
+    element.classList.remove('list-item-selected');
+  });
+}
+
 function closeModalSuccess() {
   const modal = document.getElementById('modal');
   if (modal) {
@@ -123,6 +133,14 @@ function closeModalSuccess() {
     badCount = 0;
     goodCount = 0;
     selectedNumbers = [];
+    attemptsElement.value = '0';
+    attemptsCountTemp.textContent = '0';
+    attemptsCountYes.textContent = '0';
+    attemptsCountNot.textContent = '0';
+    firstInput.value = '';
+    secondInput.value = '';
+    answerInput.value = '';
+    removeListItemSelectedClasses();
   }
 }
 
