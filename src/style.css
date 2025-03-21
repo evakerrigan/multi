@@ -93,68 +93,47 @@ input[type='number']::-webkit-outer-spin-button {
 
 /* ******************** стилизация мигающего INPUT в футере ******************** */
 
+
 .footer-input::placeholder {
-  font-size: 2rem;
-  color: transparent;
-  opacity: 0;
-  animation: blinkPlaceholder 1s ease-in-out infinite;
+  color: #6cade5;
+  opacity: 1;
+  animation: blinkPlaceholder 1.2s step-end infinite;
 }
 
 .footer-input::-webkit-input-placeholder {
-  /* Chrome/Safari/Opera */
-  font-size: 2rem;
-  color: transparent;
-  opacity: 0;
-  animation: blinkPlaceholder 1s ease-in-out infinite;
+  color: #6cade5;
+  opacity: 1;
+  animation: blinkPlaceholder 1.2s step-end infinite;
 }
 
 .footer-input::-moz-placeholder {
-  /* Firefox */
-  color: transparent;
-  opacity: 0;
-  animation: blinkPlaceholder 1s ease-in-out infinite;
+  color: #6cade5;
+  opacity: 1;
+  animation: blinkPlaceholder 1.2s step-end infinite;
 }
 
 .footer-input:-ms-input-placeholder {
-  /* IE/Edge */
-  color: transparent;
-  opacity: 0;
-  animation: blinkPlaceholder 1s ease-in-out infinite;
+  color: #6cade5;
+  opacity: 1;
+  animation: blinkPlaceholder 1.2s step-end infinite;
 }
 
-@keyframes blinkValue {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+.footer-input {
+  position: relative;
 }
 
-.footer-input:placeholder-shown + .value-blinker {
-  animation: blinkValue 1s ease-in-out infinite;
-}
-
-/* Добавляем элемент для анимации */
-.footer-input + .value-blinker {
+.footer-input:empty:before {
+  content: "0";
   position: absolute;
-  top: 50%;
-  right: 17%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
+  color: red;
+  animation: blinkPlaceholder 1.2s step-end infinite;
 }
 
-@keyframes blinkValue {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+@keyframes blinkPlaceholder {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
+
 
 /* ********************  ******************** */
 

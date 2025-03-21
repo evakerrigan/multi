@@ -56,20 +56,3 @@ export function showFailureEffect(): void {
   document.body.style.backgroundColor = 'red';
   setTimeout(() => (document.body.style.backgroundColor = ''), 1000);
 }
-
-export function setupInputAnimation(input: Element): void {
-  if (input instanceof HTMLInputElement) {
-    // Создаем элемент для мигающего курсора
-    const blinker = document.createElement('span');
-    blinker.className = 'value-blinker';
-    blinker.textContent = '0';
-
-    // Добавляем элемент после инпута
-    input.parentNode?.insertBefore(blinker, input.nextSibling);
-
-    // Обработчик изменения значения
-    input.addEventListener('input', () => {
-      blinker.style.display = input.value ? 'none' : 'block';
-    });
-  }
-}

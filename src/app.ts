@@ -1,5 +1,6 @@
 import {addSelectedNumber, removeSelectedNumber} from './utils/state';
-import {answerInput, setupInputAnimation} from './utils/ui';
+// import {answerInput, setupInputAnimation} from './utils/ui';
+import {answerInput} from './utils/ui';
 import {checkAnswer as checkAnswerUtil, startGame, setFirstInputValue} from './utils/game';
 import {
   closeModalSuccess,
@@ -45,12 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-
-  // Настройка анимации инпутов
-  const attemptsInput = document.getElementById('attempts-input');
-  if (attemptsInput) {
-    setupInputAnimation(attemptsInput);
-  }
 
   // Обработчик кнопки закрытия модального окна
   const closeModalButton = document.getElementById('closeModalSuccess');
