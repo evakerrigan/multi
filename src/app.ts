@@ -12,6 +12,7 @@ const attemptsCountNot = document.getElementById(
   'attempts-count-not'
 ) as HTMLElement;
 const attemptsElement = document.getElementById('attempts') as HTMLInputElement;
+const start = document.getElementById('start');
 
 let count = 0;
 let badCount = 0;
@@ -147,6 +148,7 @@ function closeModalSuccess() {
     removeListItemSelectedClasses();
     firstInput.removeAttribute('disabled');
     secondInput.removeAttribute('disabled');
+    start?.removeAttribute('disabled');
   }
 }
 
@@ -189,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.footer-input').forEach(setupInputAnimation);
 
-  const start = document.getElementById('start');
   if (start) {
     start.addEventListener('click', startGame);
   }
@@ -213,4 +214,5 @@ function startGame() {
   console.log('start');
   firstInput.setAttribute('disabled', '');
   secondInput.setAttribute('disabled', '');
+  start?.setAttribute('disabled', '');
 }

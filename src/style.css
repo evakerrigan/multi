@@ -262,11 +262,18 @@ ul.modal-instruction-list {
 }
 
 .button-start {
-  background-color: #6cade5;
   color: white;
   background-color: #5991c2;
   border: none;
   border-radius: 2px;
+}
+
+.button-start:disabled {
+  background-color: #adadad;
+}
+
+.button-start:disabled:hover {
+  background-color: #adadad;
 }
 
 .button-start:hover {
