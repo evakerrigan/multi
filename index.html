@@ -139,10 +139,27 @@
         <li>Выберите число (или числа), умножение на которое надо выучить.</li>
         <li>Введите количество правильных попыток (рекомендую 100).</li>
         <li>Нажмите кнопку "Старт".</li>
+      </ul>
     </div>
   </div>
 
-  <script type="module">
+
+<script type="module">
+  import { checkAnswer, handleListClick } from './src/app.ts';
+  
+  // Эти функции доступны глобально через window
+  window.checkAnswer = checkAnswer;
+  window.handleListClick = handleListClick;
+  
+  document.querySelectorAll('#app li').forEach((li) => {
+    li.addEventListener('click', (event) => {
+      handleListClick(event);
+    });
+  });
+</script>
+
+
+  <!-- <script type="module">
     import { checkAnswer, handleListClick } from './src/app.ts';
 
     document.querySelectorAll('#app li').forEach((li) => {
@@ -150,7 +167,7 @@
         handleListClick(event);
       });
     });
-  </script>
+  </script> -->
   <noscript><div><img src="https://mc.yandex.ru/watch/100520750" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 
