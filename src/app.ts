@@ -47,7 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Настройка анимации инпутов
-  document.querySelectorAll('.footer-input').forEach(setupInputAnimation);
+  const attemptsInput = document.getElementById('attempts-input');
+  if (attemptsInput) {
+    setupInputAnimation(attemptsInput);
+  }
 
   // Обработчик кнопки закрытия модального окна
   const closeModalButton = document.getElementById('closeModalSuccess');

@@ -20,8 +20,8 @@ export const attemptsCountYes = document.getElementById(
 export const attemptsCountNot = document.getElementById(
   'attempts-count-not'
 ) as HTMLElement;
-export const attemptsElement = document.getElementById(
-  'attempts'
+export const attemptsInput = document.getElementById(
+  'attempts-input'
 ) as HTMLInputElement;
 
 export function updateCounters(): void {
@@ -35,7 +35,7 @@ export function resetInputs(): void {
   secondInput.value = '';
   answerInput.value = '';
   messageBlock.textContent = '';
-  attemptsElement.value = '';
+  attemptsInput.value = '';
 }
 
 export function removeListItemSelectedClasses(): void {
