@@ -103,6 +103,8 @@ export function checkAnswer(): void {
   if (goodCount < parseInt(attemptsElement.value)) {
     chooseRandomNumberAndSetToFirstInput(selectedNumbers);
     generateRandomNumberAndSetToSecondInput();
+  } else if (goodCount == 0) {
+    return;
   } else {
     openModal();
   }
