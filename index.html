@@ -6,7 +6,7 @@
   <title>Таблица Умножения</title>
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZGXR7T40V"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -14,35 +14,45 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'G-6ZGXR7T40V');
+    gtag('config', 'G-M5P6W57SP1');
   </script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      (k = e.createElement(t)),
+        (a = e.getElementsByTagName(t)[0]),
+        (k.async = 1),
+        (k.src = r),
+        a.parentNode.insertBefore(k, a);
+    })(
+      window,
+      document,
+      'script',
+      'https://mc.yandex.ru/metrika/tag.js',
+      'ym'
+    );
 
-  gtag('config', 'G-M5P6W57SP1');
-</script>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-  ym(100520750, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true,
-       webvisor:true
-  });
-</script>
-<!-- /Yandex.Metrika counter -->
-  <script type="module" crossorigin src="/assets/index-KMo9rQh8.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CsWWqLFA.css">
+    ym(100520750, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+  <script type="module" crossorigin src="/assets/index-Dx_aobaW.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C2kJBzg_.css">
 </head>
 
 <body>
@@ -59,7 +69,7 @@
         <p id="message"></p>
       </div>
     </div>
-    <footer class="page-footer">      
+    <footer class="page-footer">
       <div class="footer-container">
         <div class="footer-content first-child">
           <p>Выберите число, умножение на которое надо выучить</p>
@@ -80,8 +90,11 @@
         <div class="footer-content middle-child">
           <div class="footer-content">
             <div class="attempts-container">
-              <p class="">Введите количество<br> успешных попыток:</p>
-              <input class="footer-input" type="number" id="attempts" placeholder="0" />
+              <p class="">
+                Введите количество<br />
+                успешных попыток:
+              </p>
+              <input class="footer-input" type="number" id="attempts-input" placeholder="0" />
             </div>
           </div>
           <div class="footer-content">
@@ -130,20 +143,36 @@
         <li>Первый раз вы посчитаете ответ.</li>
         <li>Второй раз - снова посчитаете.</li>
         <li>
-          На последующие повторения этого же примера вы вспомните:
-          "Я же 5 минут назад уже
-          отвечал на этот пример, там было такое то число."
+          На последующие повторения этого же примера вы вспомните: "Я же 5
+          минут назад уже отвечал на этот пример, там было такое то число."
         </li>
       </ul>
       <p>Инструкция:</p>
       <ul class="modal-instruction-list">
-        <li>Выберите число (или числа), умножение на которое надо выучить.</li>
+        <li>
+          Выберите число (или числа), умножение на которое надо выучить.
+        </li>
         <li>Введите количество правильных попыток (рекомендую 100).</li>
         <li>Нажмите кнопку "Старт".</li>
+      </ul>
     </div>
   </div>
 
-  <noscript><div><img src="https://mc.yandex.ru/watch/100520750" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+  <!-- <script type="module">
+    import { checkAnswer, handleListClick } from './src/app.ts';
+
+    document.querySelectorAll('#app li').forEach((li) => {
+      li.addEventListener('click', (event) => {
+        handleListClick(event);
+      });
+    });
+  </script> -->
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/100520750" style="position: absolute; left: -9999px" alt="" />
+    </div>
+  </noscript>
 </body>
 
 </html>
