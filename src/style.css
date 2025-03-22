@@ -25,6 +25,14 @@ body {
   justify-content: center;
 }
 
+.main-container {
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
 button {
   padding: 10px 20px;
   cursor: pointer;
@@ -71,6 +79,12 @@ input[type='number']::-webkit-outer-spin-button {
   text-align: center;
 }
 
+.message {
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+}
+
 /* ******************** INPUT В ФУТЕРЕ  ******************** */
 
 .footer-input {
@@ -92,7 +106,6 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 /* ******************** стилизация мигающего INPUT в футере ******************** */
-
 
 .footer-input::placeholder {
   color: #6cade5;
@@ -123,17 +136,21 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .footer-input:empty:before {
-  content: "0";
+  content: '0';
   position: absolute;
   color: red;
   animation: blinkPlaceholder 1.2s step-end infinite;
 }
 
 @keyframes blinkPlaceholder {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
-
 
 /* ********************  ******************** */
 
@@ -159,7 +176,7 @@ input[type='number']::-webkit-outer-spin-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 20px 20px 20px;
 }
 
 .first-child {
