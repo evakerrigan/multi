@@ -333,6 +333,13 @@ ul.modal-instruction-list {
   border-radius: 4px;
 }
 
+.modal-image {
+  border: 1px solid #6cade5;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .close-instruction {
   color: #aaa;
   float: right;
