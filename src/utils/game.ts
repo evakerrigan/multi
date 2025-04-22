@@ -13,7 +13,8 @@ import {
   incrementCount,
   incrementGoodCount,
   incrementBadCount,
-  getGoodCount
+  getGoodCount,
+  resetCounts
 } from './state';
 import {openModal} from './modal';
 
@@ -65,7 +66,10 @@ export function checkAnswer(): void {
     messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
   }
 
-  if (getGoodCount() < parseInt(attemptsInput.value) || isNaN(parseInt(attemptsInput.value))) {
+  if (
+    getGoodCount() < parseInt(attemptsInput.value) ||
+    isNaN(parseInt(attemptsInput.value))
+  ) {
     chooseRandomNumberAndSetToFirstInput(selectedNumbers);
     generateRandomNumberAndSetToSecondInput();
   } else {
@@ -76,12 +80,15 @@ export function checkAnswer(): void {
 export function startGame(): void {
   // Логика начала игры
   const firstInput = document.getElementById('firstNumber') as HTMLInputElement;
-  const secondInput = document.getElementById('secondNumber') as HTMLInputElement;
+  const secondInput = document.getElementById(
+    'secondNumber'
+  ) as HTMLInputElement;
   const startButton = document.getElementById('start') as HTMLButtonElement;
-  
+
   if (firstInput) firstInput.setAttribute('disabled', 'true');
   if (secondInput) secondInput.setAttribute('disabled', 'true');
   if (startButton) startButton.setAttribute('disabled', 'true');
-  
+
   setFirstInputValue();
+  resetCounts();
 }
