@@ -319,7 +319,6 @@ ul.modal-instruction-list {
   flex-direction: column;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px 0;
 }
 
 .modal-content {

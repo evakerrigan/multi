@@ -1,20 +1,3 @@
-// Глобальное состояние приложения
-// let count = 0;
-// let badCount = 0;
-// let goodCount = 0;
-// let selectedNumbers: number[] = [];
-
-// export function getCount(): number {
-//   return count;
-// }
-
-// export function getBadCount(): number {
-//   return badCount;
-// }
-
-// export function getGoodCount(): number {
-//   return goodCount;
-// }
 type State = {
   count: number;
   badCount: number;
@@ -84,8 +67,6 @@ export function setBadCount(value: number) {
 export function setGoodCount(value: number) {
   state.goodCount = value;
 }
-
-updateUI();
 
 export function incrementCount(): void {
   state.count += 1;
