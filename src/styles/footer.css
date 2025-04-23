@@ -8,8 +8,8 @@
   background-color: #282c35;
   border-bottom: 1px solid #aaa;
   /* -moz-appearance: textfield; */
-  padding: 0 5px 0 15px;
   color: #6cade5;
+  text-align: center;
 }
 
 .footer-input:focus {
