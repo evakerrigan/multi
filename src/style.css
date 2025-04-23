@@ -374,3 +374,8 @@ ul.modal-instruction-list {
 .instruction-button:hover {
   background-color: #e0e0e0;
 }
+
+.modal-image-success-container {
+  display: flex;
+  justify-content: center;
+}
