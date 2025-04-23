@@ -1,7 +1,17 @@
+import {getRandomGifNumber} from './getRandomGif';
 import {resetCounts, clearSelectedNumbers} from './state';
 import {resetInputs, removeListItemSelectedClasses, updateCounters} from './ui';
 
 export function openModal(): void {
+  const randomGifNumber = getRandomGifNumber();
+  const gifPath = `./src/assets/gifs/${randomGifNumber}.gif`;
+
+  const modalImage =
+    document.querySelector<HTMLImageElement>('.modal-image-success') || null;
+  if (modalImage) {
+    modalImage.src = gifPath;
+  }
+
   const modal = document.getElementById('modal');
   if (modal) {
     modal.style.display = 'flex';
@@ -17,12 +27,16 @@ export function closeModalSuccess(): void {
     resetInputs();
     removeListItemSelectedClasses();
     updateCounters();
-    
+
     // Разблокировать инпуты и кнопку Старт
-    const firstInput = document.getElementById('firstNumber') as HTMLInputElement;
-    const secondInput = document.getElementById('secondNumber') as HTMLInputElement;
+    const firstInput = document.getElementById(
+      'firstNumber'
+    ) as HTMLInputElement;
+    const secondInput = document.getElementById(
+      'secondNumber'
+    ) as HTMLInputElement;
     const startButton = document.getElementById('start') as HTMLButtonElement;
-    
+
     if (firstInput) firstInput.removeAttribute('disabled');
     if (secondInput) secondInput.removeAttribute('disabled');
     if (startButton) startButton.removeAttribute('disabled');
