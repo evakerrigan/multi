@@ -378,4 +378,5 @@ ul.modal-instruction-list {
 .modal-image-success-container {
   display: flex;
   justify-content: center;
+  padding: 30px;
 }
