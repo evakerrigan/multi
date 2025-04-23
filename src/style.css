@@ -380,3 +380,13 @@ ul.modal-instruction-list {
   justify-content: center;
   padding: 30px;
 }
+
+.modal-image-success {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .modal-image-success-container {
+    padding: 0px;
+  }
+}
