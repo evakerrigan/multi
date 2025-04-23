@@ -4,7 +4,7 @@ import {resetInputs, removeListItemSelectedClasses, updateCounters} from './ui';
 
 export function openModal(): void {
   const randomGifNumber = getRandomGifNumber();
-  const gifPath = `./src/assets/gifs/${randomGifNumber}.gif`;
+  const gifPath = `/gifs/${randomGifNumber}.gif`;
 
   const modalImage =
     document.querySelector<HTMLImageElement>('.modal-image-success') || null;
