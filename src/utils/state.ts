@@ -44,65 +44,50 @@ function updateUI() {
   }
 }
 
-export function getCount(): number {
-  return state.count;
-}
+export const counterState = {
+  getCount: () => state.count,
+  getBadCount: () => state.badCount,
+  getGoodCount: () => state.goodCount,
 
-export function getBadCount(): number {
-  return state.badCount;
-}
-
-export function getGoodCount(): number {
-  return state.goodCount;
-}
-
-export function setCount(value: number) {
-  state.count = value;
-}
-
-export function setBadCount(value: number) {
-  state.badCount = value;
-}
-
-export function setGoodCount(value: number) {
-  state.goodCount = value;
-}
-
-export function incrementCount(): void {
-  state.count += 1;
-}
-
-export function incrementBadCount(): void {
-  state.badCount += 1;
-}
-
-export function incrementGoodCount(): void {
-  state.goodCount += 1;
-}
-
-export function resetCounts(): void {
-  state.count = 0;
-  state.badCount = 0;
-  state.goodCount = 0;
-}
-
-export function getSelectedNumbers(): number[] {
-  return state.selectedNumbers;
-}
-
-export function addSelectedNumber(num: number): void {
-  if (!state.selectedNumbers.includes(num)) {
-    state.selectedNumbers.push(num);
+  setCount: (value: number) => {
+    state.count = value;
+  },
+  setBadCount: (value: number) => {
+    state.badCount = value;
+  },
+  setGoodCount: (value: number) => {
+    state.goodCount = value;
+  },
+  resetCounts: () => {
+    state.count = 0;
+    state.badCount = 0;
+    state.goodCount = 0;
+  },
+  incrementCount: () => {
+    state.count += 1;
+  },
+  incrementBadCount: () => {
+    state.badCount += 1;
+  },
+  incrementGoodCount: () => {
+    state.goodCount += 1;
   }
-}
+};
 
-export function removeSelectedNumber(num: number): void {
-  const index = state.selectedNumbers.indexOf(num);
-  if (index > -1) {
-    state.selectedNumbers.splice(index, 1);
+export const selectedNumbersState = {
+  getSelectedNumbers: () => state.selectedNumbers,
+  addSelectedNumber: (num: number) => {
+    if (!state.selectedNumbers.includes(num)) {
+      state.selectedNumbers.push(num);
+    }
+  },
+  removeSelectedNumber: (num: number) => {
+    const index = state.selectedNumbers.indexOf(num);
+    if (index > -1) {
+      state.selectedNumbers.splice(index, 1);
+    }
+  },
+  clearSelectedNumbers: () => {
+    state.selectedNumbers = [];
   }
-}
-
-export function clearSelectedNumbers(): void {
-  state.selectedNumbers = [];
-}
+};

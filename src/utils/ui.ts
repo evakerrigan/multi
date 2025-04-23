@@ -1,4 +1,4 @@
-import {getCount, getBadCount, getGoodCount} from './state';
+import {counterState} from './state';
 
 // Элементы DOM
 export const firstInput = document.getElementById(
@@ -25,9 +25,9 @@ export const attemptsInput = document.getElementById(
 ) as HTMLInputElement;
 
 export function updateCounters(): void {
-  attemptsCountTemp.textContent = getCount().toString();
-  attemptsCountYes.textContent = getGoodCount().toString();
-  attemptsCountNot.textContent = getBadCount().toString();
+  attemptsCountTemp.textContent = counterState.getCount().toString();
+  attemptsCountYes.textContent = counterState.getGoodCount().toString();
+  attemptsCountNot.textContent = counterState.getBadCount().toString();
 }
 
 export function resetInputs(): void {

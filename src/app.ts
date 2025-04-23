@@ -1,7 +1,10 @@
-import {addSelectedNumber, removeSelectedNumber} from './utils/state';
-// import {answerInput, setupInputAnimation} from './utils/ui';
+import {selectedNumbersState} from './utils/state';
 import {answerInput} from './utils/ui';
-import {checkAnswer as checkAnswerUtil, startGame, setFirstInputValue} from './utils/game';
+import {
+  checkAnswer as checkAnswerUtil,
+  startGame,
+  setFirstInputValue
+} from './utils/game';
 import {
   closeModalSuccess,
   openInstructionModal,
@@ -17,12 +20,12 @@ export function handleListClick(event: MouseEvent): void {
 
   if (target.classList.contains('list-item-selected')) {
     target.classList.remove('list-item-selected');
-    removeSelectedNumber(value);
+    selectedNumbersState.removeSelectedNumber(value);
   } else {
     target.classList.add('list-item-selected');
-    addSelectedNumber(value);
+    selectedNumbersState.addSelectedNumber(value);
   }
-  
+
   // Генерируем новый пример после выбора числа
   setFirstInputValue();
 }

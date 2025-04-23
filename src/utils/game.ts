@@ -8,14 +8,7 @@ import {
   showFailureEffect,
   updateCounters
 } from './ui';
-import {
-  getSelectedNumbers,
-  incrementCount,
-  incrementGoodCount,
-  incrementBadCount,
-  getGoodCount,
-  resetCounts
-} from './state';
+import {counterState, selectedNumbersState} from './state';
 import {openModal} from './modal';
 
 export function generateRandomNumberAndSetToSecondInput(): void {
@@ -35,7 +28,7 @@ export function chooseRandomNumberAndSetToFirstInput(array: number[]): string {
 }
 
 export function setFirstInputValue(): void {
-  const selectedNumbers = getSelectedNumbers();
+  const selectedNumbers = selectedNumbersState.getSelectedNumbers();
   chooseRandomNumberAndSetToFirstInput(selectedNumbers);
   generateRandomNumberAndSetToSecondInput();
 }
@@ -44,9 +37,9 @@ export function checkAnswer(): void {
   const expectedResult =
     parseInt(firstInput.value) * parseInt(secondInput.value);
   const answer = parseInt(answerInput.value);
-  const selectedNumbers = getSelectedNumbers();
+  const selectedNumbers = selectedNumbersState.getSelectedNumbers();
 
-  incrementCount();
+  counterState.incrementCount();
   updateCounters();
 
   if (isNaN(answer)) {
@@ -55,19 +48,19 @@ export function checkAnswer(): void {
   }
 
   if (expectedResult === answer) {
-    incrementGoodCount();
+    counterState.incrementGoodCount();
     updateCounters();
     showSuccessEffect();
     messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ верный. ${expectedResult}`;
   } else {
-    incrementBadCount();
+    counterState.incrementBadCount();
     updateCounters();
     showFailureEffect();
     messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
   }
 
   if (
-    getGoodCount() < parseInt(attemptsInput.value) ||
+    counterState.getGoodCount() < parseInt(attemptsInput.value) ||
     isNaN(parseInt(attemptsInput.value))
   ) {
     chooseRandomNumberAndSetToFirstInput(selectedNumbers);
@@ -90,5 +83,5 @@ export function startGame(): void {
   if (startButton) startButton.setAttribute('disabled', 'true');
 
   setFirstInputValue();
-  resetCounts();
+  counterState.resetCounts();
 }
