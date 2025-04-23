@@ -1,75 +1,62 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Таблица умножения онлайн - тренировка памяти | MultiTable</title>
-    <meta
-      name="description"
-      content="Онлайн игра для изучения таблицы умножения. Повторяй примеры чтобы выучить."
-    />
-    <meta
-      property="og:title"
-      content="Таблица умножения онлайн - тренировка памяти | MultiTable"
-    />
-    <meta
-      property="og:description"
-      content="Играйте онлайн и учите таблицу умножения. Повторяйте примеры для улучшения памяти."
-    />
 
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, maximum-scale=1"
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <title>Таблица умножения онлайн - тренировка памяти | MultiTable</title>
+  <meta name="description" content="Онлайн игра для изучения таблицы умножения. Повторяй примеры чтобы выучить." />
+  <meta property="og:title" content="Таблица умножения онлайн - тренировка памяти | MultiTable" />
+  <meta property="og:description"
+    content="Играйте онлайн и учите таблицу умножения. Повторяйте примеры для улучшения памяти." />
 
-      gtag('config', 'G-M5P6W57SP1');
-    </script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M5P6W57SP1');
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
         }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        'script',
-        'https://mc.yandex.ru/metrika/tag.js',
-        'ym'
-      );
+      }
+      (k = e.createElement(t)),
+        (a = e.getElementsByTagName(t)[0]),
+        (k.async = 1),
+        (k.src = r),
+        a.parentNode.insertBefore(k, a);
+    })(
+      window,
+      document,
+      'script',
+      'https://mc.yandex.ru/metrika/tag.js',
+      'ym'
+    );
 
-      ym(100520750, 'init', {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true
-      });
-    </script>
-    <!-- /Yandex.Metrika counter -->
-    <script type="application/ld+json">
+    ym(100520750, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Game",
@@ -81,152 +68,131 @@
         }
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-CXsJAOyO.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DFxh5ebd.css">
-  </head>
+  <script type="module" crossorigin src="/assets/index-9vQ9E_1Z.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DFxh5ebd.css">
+</head>
 
-  <body>
-    <div id="app" class="app">
-      <div class="main">
-        <div class="main-container">
-          <div class="multi-container">
-            <input type="number" id="firstNumber" class="multi-input" />
-            <span> x </span>
-            <input type="number" id="secondNumber" class="multi-input" />
-            <button id="done" onclick="checkAnswer()">=</button>
-            <input type="number" id="answer" class="multi-input" />
-          </div>
-          <p id="message" class="message"></p>
+<body>
+  <div id="app" class="app">
+    <div class="main">
+      <div class="main-container">
+        <div class="multi-container">
+          <input type="number" id="firstNumber" class="multi-input" />
+          <span> x </span>
+          <input type="number" id="secondNumber" class="multi-input" />
+          <button id="done" onclick="checkAnswer()">=</button>
+          <input type="number" id="answer" class="multi-input" />
         </div>
-      </div>
-      <footer class="page-footer">
-        <div class="footer-container">
-          <div class="footer-content first-child">
-            <p>Выберите число, умножение на которое надо выучить</p>
-            <ul class="footer-list">
-              <li>0</li>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-            </ul>
-          </div>
-          <div class="footer-content middle-child">
-            <div class="footer-content">
-              <div class="attempts-container">
-                <p class="">
-                  Введите количество<br />
-                  успешных попыток:
-                </p>
-                <input
-                  class="footer-input"
-                  type="number"
-                  id="attempts-input"
-                  placeholder="0"
-                />
-              </div>
-            </div>
-            <div class="footer-content">
-              <button id="start" class="button-start">Старт</button>
-            </div>
-          </div>
-          <div class="footer-content last-child">
-            <div>
-              Всего попыток:
-              <span id="attempts-count-temp" class="attempts-count temp">
-                0</span
-              >
-            </div>
-            <div>
-              Успешных:
-              <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
-            </div>
-            <div>
-              Неудачных:
-              <span id="attempts-count-not" class="attempts-count not"> 0</span>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <!-- Модальное окно успешного выполнения -->
-
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span id="closeModalSuccess" class="close-instruction">&times;</span>
-        <h2>Поздравляем!</h2>
-        <p>Отличная работа! Вы успешно справились с заданием!</p>
-        <div class="modal-image-success-container">
-          <img alt="gif" class="modal-image-success" />
-        </div>
+        <p id="message" class="message"></p>
       </div>
     </div>
+    <footer class="page-footer">
+      <div class="footer-container">
+        <div class="footer-content first-child">
+          <p>Выберите число, умножение на которое надо выучить</p>
+          <ul class="footer-list">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+          </ul>
+        </div>
+        <div class="footer-content middle-child">
+          <div class="footer-content">
+            <div class="attempts-container">
+              <p class="">
+                Введите количество<br />
+                успешных попыток:
+              </p>
+              <input class="footer-input" type="number" id="attempts-input" placeholder="0" />
+            </div>
+          </div>
+          <div class="footer-content">
+            <button id="start" class="button-start">Старт</button>
+          </div>
+        </div>
+        <div class="footer-content last-child">
+          <div>
+            Всего попыток:
+            <span id="attempts-count-temp" class="attempts-count temp">
+              0</span>
+          </div>
+          <div>
+            Успешных:
+            <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
+          </div>
+          <div>
+            Неудачных:
+            <span id="attempts-count-not" class="attempts-count not"> 0</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Модальное окно успешного выполнения -->
 
-    <!-- Модальное окно с инструкцией -->
-    <div id="instructionButton" class="instruction-button">i</div>
-
-    <div id="instructionModal" class="modal">
-      <div class="modal-content">
-        <span class="close-instruction">&times;</span>
-        <p>
-          Приложение для заучивания таблицы умножения методом многократного
-          повторении одних и тех же примеров
-        </p>
-        <ul class="modal-instruction-description-list">
-          <li>Первый раз вы посчитаете ответ.</li>
-          <li>Второй раз - снова посчитаете.</li>
-          <li>
-            На последующие повторения этого же примера вы вспомните: "Я же 5
-            минут назад уже отвечал на этот пример, там было такое то число."
-          </li>
-        </ul>
-        <p>Инструкция:</p>
-        <ul class="modal-instruction-list">
-          <li>
-            <p>
-              Выберите число (или числа), умножение на которое надо выучить.
-            </p>
-            <img
-              src="/assets/1-WRTWAZ0o.png"
-              alt="step1"
-              class="modal-image"
-            />
-          </li>
-          <li>
-            <p>Введите количество правильных попыток (рекомендую 100).</p>
-            <img
-              src="data:image/png;base64,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"
-              alt="step2"
-              class="modal-image"
-            />
-          </li>
-          <li>
-            <p>Нажмите кнопку "Старт".</p>
-            <img
-              src="data:image/png;base64,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"
-              alt="step3"
-              class="modal-image"
-            />
-          </li>
-        </ul>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalSuccess" class="close-instruction">&times;</span>
+      <h2>Поздравляем!</h2>
+      <p>Отличная работа! Вы успешно справились с заданием!</p>
+      <div class="modal-image-success-container">
+        <img alt="gif" class="modal-image-success" />
       </div>
     </div>
+  </div>
+
+  <!-- Модальное окно с инструкцией -->
+  <div id="instructionButton" class="instruction-button">i</div>
+
+  <div id="instructionModal" class="modal">
+    <div class="modal-content">
+      <span class="close-instruction">&times;</span>
+      <p>
+        Приложение для заучивания таблицы умножения методом многократного
+        повторении одних и тех же примеров
+      </p>
+      <ul class="modal-instruction-description-list">
+        <li>Первый раз вы посчитаете ответ.</li>
+        <li>Второй раз - снова посчитаете.</li>
+        <li>
+          На последующие повторения этого же примера вы вспомните: "Я же 5
+          минут назад уже отвечал на этот пример, там было такое то число."
+        </li>
+      </ul>
+      <p>Инструкция:</p>
+      <ul class="modal-instruction-list">
+        <li>
+          <p>
+            Выберите число (или числа), умножение на которое надо выучить.
+          </p>
+          <img src="/images/1.png" alt="step1" class="modal-image" />
+        </li>
+        <li>
+          <p>Введите количество правильных попыток (рекомендую 100).</p>
+          <img src="/images/2.png" alt="step2" class="modal-image" />
+        </li>
+        <li>
+          <p>Нажмите кнопку "Старт".</p>
+          <img src="/images/3.png" alt="step3" class="modal-image" />
+        </li>
+      </ul>
+    </div>
+  </div>
 
 
-    <noscript>
-      <div>
-        <img
-          src="https://mc.yandex.ru/watch/100520750"
-          style="position: absolute; left: -9999px"
-          alt=""
-        />
-      </div>
-    </noscript>
-  </body>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/100520750" style="position: absolute; left: -9999px" alt="" />
+    </div>
+  </noscript>
+</body>
+
 </html>
