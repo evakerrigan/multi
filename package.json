@@ -2,8 +2,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "serve": "vite preview"
   },
   "type": "module",
   "devDependencies": {
@@ -14,8 +13,5 @@
   "include": [
     "src/**/*",
     "src/global.d.ts"
-  ],
-  "dependencies": {
-    "gh-pages": "^6.3.0"
-  }
+  ]
 }
