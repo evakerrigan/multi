@@ -76,6 +76,16 @@
   width: 100%;
 }
 
+ul.modal-instruction-description-list {
+  list-style-type: square;
+}
+
+ul.modal-instruction-list {
+  list-style-type: decimal;
+  margin: 0;
+  padding: 0 20px;
+}
+
 @media screen and (max-width: 600px) {
   .modal-image-success-container {
     padding: 0px;

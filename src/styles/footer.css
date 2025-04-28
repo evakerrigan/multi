@@ -119,14 +119,6 @@ ul.footer-list {
   flex-wrap: wrap;
 }
 
-ul.modal-instruction-description-list {
-  list-style-type: square;
-}
-
-ul.modal-instruction-list {
-  list-style-type: decimal;
-}
-
 .footer-list li {
   padding: 10px;
   border: 1px solid #aaa;
@@ -209,8 +201,3 @@ ul.modal-instruction-list {
   }
 }
 
-@media screen and (max-width: 450px) {
-  .multi-input {
-    font-size: 4rem;
-  }
-}

@@ -46,7 +46,7 @@ export function closeModalSuccess(): void {
 export function openInstructionModal(): void {
   const modalInstruction = document.getElementById('instructionModal');
   if (modalInstruction) {
-    modalInstruction.style.display = 'flex';
+    modalInstruction.style.display = 'block';
   }
 }
 
