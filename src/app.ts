@@ -11,6 +11,8 @@ import {
   closeInstructionModal
 } from './utils/modal';
 import {CustomWindow} from './types';
+import { changeLanguage } from './utils/changeLanguage';
+import { changeLevel } from './utils/changeLevel';
 
 // Обработчики событий
 export function handleListClick(event: MouseEvent): void {
@@ -39,6 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const instructionButton = document.getElementById('instructionButton');
   if (instructionButton) {
     instructionButton.addEventListener('click', openInstructionModal);
+  }
+
+  const languageButton = document.getElementById('languageButton');
+  if (languageButton) {
+    languageButton.addEventListener('click', changeLanguage);
+  }
+
+  const levelButton = document.getElementById('levelButton');
+  if (levelButton) {
+    levelButton.addEventListener('click', changeLevel);
   }
 
   document.addEventListener('click', (event) => {

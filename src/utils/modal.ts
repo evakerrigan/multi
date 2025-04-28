@@ -56,3 +56,5 @@ export function closeInstructionModal(): void {
     modal.style.display = 'none';
   }
 }
+
+
