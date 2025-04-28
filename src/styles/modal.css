@@ -49,10 +49,8 @@
 .settings-button {
   position: fixed;
   top: 20px;
-  /* right: 20px; */
   background-color: #f8f8f8;
-  border-radius: 2px;
-  width: 40px;
+  border-radius: 2px;  
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -63,30 +61,21 @@
 }
 
 .instruction-button {
-  /* position: fixed;
-  top: 20px; */
   right: 20px;
-  /* background-color: #f8f8f8;
-  border-radius: 2px;
   width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: 1px solid #aaa; */
 }
 
 .level-button { 
-  right: 280px;
+  right: 182px;
+  width: 115px;
 }
 
 .language-button { 
-  right: 150px;
+  right: 82px;
+  width: 76px;
 }
 
-.instruction-button:hover {
+.settings-button:hover {
   background-color: #e0e0e0;
 }
 
