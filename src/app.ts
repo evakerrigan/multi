@@ -11,8 +11,9 @@ import {
   closeInstructionModal
 } from './utils/modal';
 import {CustomWindow} from './types';
-import { languageSwitcher } from './utils/languageSwitcher';
-import { levelSwitcher } from './utils/levelSwitcher';
+import {languageSwitcher} from './utils/languageSwitcher';
+import {levelSwitcher} from './utils/levelSwitcher';
+import {getLanguageFromLocalStorage} from './utils/localStorage';
 
 // Обработчики событий
 export function handleListClick(event: MouseEvent): void {
@@ -45,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const languageButton = document.getElementById('languageButton');
   if (languageButton) {
+    const lang = getLanguageFromLocalStorage();
     languageButton.addEventListener('click', languageSwitcher);
+    languageButton.textContent = lang;
   }
 
   const levelButton = document.getElementById('levelButton');
