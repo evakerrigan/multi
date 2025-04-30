@@ -1,4 +1,4 @@
-import {selectedNumbersState} from './state/state';
+import {selectedNumbersState} from './state/stateControls';
 import {answerInput} from './utils/ui';
 import {
   checkAnswer as checkAnswerUtil,

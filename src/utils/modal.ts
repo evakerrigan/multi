@@ -1,5 +1,5 @@
 import {getRandomGifNumber} from './getRandomGif';
-import {counterState, selectedNumbersState} from '../state/state';
+import {counterState, selectedNumbersState} from '../state/stateControls';
 import {resetInputs, removeListItemSelectedClasses, updateCounters} from './ui';
 
 export function openModal(): void {

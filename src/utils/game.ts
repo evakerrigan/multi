@@ -8,7 +8,7 @@ import {
   showFailureEffect,
   updateCounters
 } from './ui';
-import {counterState, selectedNumbersState} from '../state/state';
+import {counterState, selectedNumbersState} from '../state/stateControls';
 import {openModal} from './modal';
 
 export function generateRandomNumberAndSetToSecondInput(): void {
