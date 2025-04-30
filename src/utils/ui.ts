@@ -1,4 +1,4 @@
-import {counterState} from './state';
+import {counterState} from '../state/state';
 
 // Элементы DOM
 export const firstInput = document.getElementById(

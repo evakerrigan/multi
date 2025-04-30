@@ -1,5 +1,5 @@
 import {getRandomGifNumber} from './getRandomGif';
-import {counterState, selectedNumbersState} from './state';
+import {counterState, selectedNumbersState} from '../state/state';
 import {resetInputs, removeListItemSelectedClasses, updateCounters} from './ui';
 
 export function openModal(): void {
@@ -56,5 +56,3 @@ export function closeInstructionModal(): void {
     modal.style.display = 'none';
   }
 }
-
-
