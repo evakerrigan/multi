@@ -13,7 +13,11 @@ import {
 import {CustomWindow} from './types';
 import {languageSwitcher} from './utils/languageSwitcher';
 import {levelSwitcher} from './utils/levelSwitcher';
-import {getLanguageFromLocalStorage} from './utils/localStorage';
+import {
+  getLanguageFromLocalStorage,
+  getLevelFromLocalStorage
+} from './utils/localStorage';
+import {counterStateSettings} from './state/stateSettings';
 
 // Обработчики событий
 export function handleListClick(event: MouseEvent): void {
@@ -47,13 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const languageButton = document.getElementById('languageButton');
   if (languageButton) {
     const lang = getLanguageFromLocalStorage();
-    languageButton.addEventListener('click', languageSwitcher);
-    languageButton.textContent = lang;
+    counterStateSettings.setLanguage(lang);
+    languageButton.addEventListener('click', () => languageSwitcher(lang));
+    languageButton.textContent = counterStateSettings.getLanguage().toString();
   }
 
   const levelButton = document.getElementById('levelButton');
   if (levelButton) {
+    const level = getLevelFromLocalStorage();
+    counterStateSettings.setLevel(level);
     levelButton.addEventListener('click', levelSwitcher);
+    levelButton.textContent = counterStateSettings.getLevel().toString();
   }
 
   document.addEventListener('click', (event) => {
