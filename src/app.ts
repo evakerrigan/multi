@@ -51,9 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const languageButton = document.getElementById('languageButton');
   if (languageButton) {
     const lang = getLanguageFromLocalStorage();
+    console.log('lang app: ', lang);
     counterStateSettings.setLanguage(lang);
-    languageButton.addEventListener('click', () => languageSwitcher(lang));
     languageButton.textContent = counterStateSettings.getLanguage().toString();
+    languageButton.addEventListener('click', () =>
+      languageSwitcher(counterStateSettings.getLanguage())
+    );
   }
 
   const levelButton = document.getElementById('levelButton');

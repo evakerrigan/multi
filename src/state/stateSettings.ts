@@ -30,7 +30,9 @@ export const counterStateSettings = {
   getLevel: () => stateSettings.levelState,
 
   setLanguage: (value: string) => {
+    console.log('вызываем сетлэнгвич');
     stateSettings.langState = value;
+    console.log('смотрим что в стейте: ', counterStateSettings.getLanguage());
   },
 
   setLevel: (value: string) => {

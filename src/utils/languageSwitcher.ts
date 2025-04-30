@@ -1,24 +1,10 @@
-import { counterStateSettings } from '../state/stateSettings';
-import {
-  // getLanguageFromLocalStorage,
-  setLanguageInLocalStorage
-} from './localStorage';
+import {counterStateSettings} from '../state/stateSettings';
+import {setLanguageInLocalStorage} from './localStorage';
 
 export function languageSwitcher(lang) {
-  // const currentLanguage = getLanguageFromLocalStorage();
-  // console.log('currentLanguage: ', currentLanguage);
-
-
-
   console.log('ИЗМЕНЕНИЕ ЯЗЫКА');
   const languageSelect = document.getElementById('language-select');
-  // if (currentLanguage == 'ru') {
-  //   setLanguageInLocalStorage('en');
-  //   updateTranslations('en');
-  // } else {
-  //   setLanguageInLocalStorage('ru');
-  //   updateTranslations('ru');
-  // }
+
   if (lang == 'ru') {
     setLanguageInLocalStorage('en');
     counterStateSettings.setLanguage('en');
