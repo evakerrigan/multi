@@ -26,6 +26,8 @@ function updateUISettings() {
 }
 
 export const counterStateSettings = {
+  this: {},
+  data: "123",
   getLanguage: () => stateSettings.langState,
   getLevel: () => stateSettings.levelState,
 

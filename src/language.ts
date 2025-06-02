@@ -1,4 +1,4 @@
-const languages = {
+export const languages = {
   ru: {
     title: 'Таблица умножения онлайн - тренировка памяти | MultiTable',
     description: 'Онлайн игра для изучения таблицы умножения'

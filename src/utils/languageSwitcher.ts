@@ -1,3 +1,4 @@
+import { languages } from '../language';
 import {counterStateSettings} from '../state/stateSettings';
 import {setLanguageInLocalStorage} from './localStorage';
 
@@ -16,12 +17,16 @@ export function languageSwitcher(lang) {
   }
 }
 
-function updateTranslations(newCurrentLanguage) {
-  // const title = document.title;
-  // const description = document.querySelector(
-  //   'meta[name="description"]'
-  // ).content;
-  // // Обновите переводы для title и description
-  // title.textContent = languages[currentLanguage].title;
-  // description.textContent = languages[currentLanguage].description;
+// const
+
+
+function updateTranslations(newCurrentLanguage: string) {
+  // Обновляем заголовок страницы
+  document.title = languages[newCurrentLanguage].title;
+
+  // Обновляем описание страницы
+  const descriptionMeta = document.querySelector('meta[name="description"]') as HTMLMetaElement;
+  if (descriptionMeta) {
+    descriptionMeta.content = languages[newCurrentLanguage].description;
+  }
 }
