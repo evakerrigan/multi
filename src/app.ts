@@ -21,9 +21,17 @@ export function handleListClick(event: MouseEvent): void {
   if (target.classList.contains('list-item-selected')) {
     target.classList.remove('list-item-selected');
     selectedNumbersState.removeSelectedNumber(value);
+    console.log(
+      `Удален номер ${value}. Текущие выбранные:`,
+      selectedNumbersState.getSelectedNumbers()
+    );
   } else {
     target.classList.add('list-item-selected');
     selectedNumbersState.addSelectedNumber(value);
+    console.log(
+      `Добавлен номер ${value}. Текущие выбранные:`,
+      selectedNumbersState.getSelectedNumbers()
+    );
   }
 
   // Генерируем новый пример после выбора числа
@@ -72,4 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (startButton) {
     startButton.addEventListener('click', startGame);
   }
+
+  // Подключаем обработчики кликов для элементов списка чисел
+  document.querySelectorAll('.footer-list li').forEach((li) => {
+    li.addEventListener('click', (event) => {
+      handleListClick(event as MouseEvent);
+    });
+  });
+
+  // Инициализируем состояние текста инструкции (должен мигать в начале)
+  // const instructionText = document.getElementById('instruction-text');
+  // if (instructionText) {
+  //   instructionText.classList.add('instruction-text-blinking');
+  // }
 });

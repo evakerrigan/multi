@@ -42,6 +42,22 @@ function updateUI() {
       selectedNumbersList.appendChild(li);
     });
   }
+
+  // Обновляем состояние текста инструкции
+  updateInstructionTextState();
+}
+
+function updateInstructionTextState() {
+  const instructionText = document.getElementById('instruction-text');
+  if (instructionText) {
+    if (state.selectedNumbers.length === 0) {
+      instructionText.classList.add('instruction-text-blinking');
+      console.log('Мигание включено - числа не выбраны');
+    } else {
+      instructionText.classList.remove('instruction-text-blinking');
+      console.log('Мигание выключено - выбраны числа:', state.selectedNumbers);
+    }
+  }
 }
 
 export const counterState = {
@@ -78,16 +94,21 @@ export const selectedNumbersState = {
   getSelectedNumbers: () => state.selectedNumbers,
   addSelectedNumber: (num: number) => {
     if (!state.selectedNumbers.includes(num)) {
-      state.selectedNumbers.push(num);
+      console.log(`Добавляю число ${num} в состояние`);
+      state.selectedNumbers = [...state.selectedNumbers, num];
     }
   },
   removeSelectedNumber: (num: number) => {
     const index = state.selectedNumbers.indexOf(num);
     if (index > -1) {
-      state.selectedNumbers.splice(index, 1);
+      console.log(`Удаляю число ${num} из состояния`);
+      state.selectedNumbers = state.selectedNumbers.filter(
+        (_, i) => i !== index
+      );
     }
   },
   clearSelectedNumbers: () => {
+    console.log('Очищаю все выбранные числа');
     state.selectedNumbers = [];
   }
 };

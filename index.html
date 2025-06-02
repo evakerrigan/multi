@@ -103,7 +103,9 @@
       <footer class="page-footer">
         <div class="footer-container">
           <div class="footer-content first-child">
-            <p>Выберите число, умножение на которое надо выучить</p>
+            <p id="instruction-text" class="instruction-text-blinking">
+              Выберите число, умножение на которое надо выучить
+            </p>
             <ul class="footer-list">
               <li>0</li>
               <li>1</li>
@@ -214,11 +216,11 @@
       window.checkAnswer = checkAnswer;
       window.handleListClick = handleListClick;
 
-      document.querySelectorAll('#app li').forEach((li) => {
-        li.addEventListener('click', (event) => {
-          handleListClick(event);
-        });
-      });
+      // document.querySelectorAll('#app li').forEach((li) => {
+      //   li.addEventListener('click', (event) => {
+      //     handleListClick(event);
+      //   });
+      // });
     </script>
 
     <noscript>

@@ -63,6 +63,25 @@
   }
 }
 
+/* ******************** мигающий красный текст когда числа не выбраны ******************** */
+
+.instruction-text-blinking {
+  animation: blinkRed 1.5s ease-in-out infinite;
+}
+
+@keyframes blinkRed {
+  0% {
+    color: #6cade5;
+  }
+  50% {
+    color: #ff4444;
+    text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+  }
+  100% {
+    color: #6cade5;
+  }
+}
+
 /* ********************  ******************** */
 
 .page-footer {
@@ -200,4 +219,3 @@ ul.footer-list {
     justify-content: space-between;
   }
 }
-
