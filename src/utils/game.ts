@@ -3,7 +3,7 @@ import {
   secondInput,
   answerInput,
   messageBlock,
-  attemptsInput,
+  // attemptsInput,
   showSuccessEffect,
   showFailureEffect,
   updateCounters
@@ -59,10 +59,8 @@ export function checkAnswer(): void {
     messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
   }
 
-  if (
-    counterState.getGoodCount() < parseInt(attemptsInput.value) ||
-    isNaN(parseInt(attemptsInput.value))
-  ) {
+  const attemptsTarget = counterState.getAttemptsCount();
+  if (counterState.getGoodCount() < attemptsTarget || attemptsTarget === 0) {
     chooseRandomNumberAndSetToFirstInput(selectedNumbers);
     generateRandomNumberAndSetToSecondInput();
   } else {

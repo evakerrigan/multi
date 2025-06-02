@@ -35,7 +35,10 @@ export function resetInputs(): void {
   secondInput.value = '';
   answerInput.value = '';
   messageBlock.textContent = '';
-  attemptsInput.value = '';
+
+  // TODO: вот тут проверить, какую строчку оставить
+  // attemptsInput.value = '';
+  counterState.setAttemptsCount(0);
 }
 
 export function removeListItemSelectedClasses(): void {

@@ -3,6 +3,7 @@ type State = {
   badCount: number;
   goodCount: number;
   selectedNumbers: number[];
+  attemptsCount: number;
 };
 
 const state = new Proxy<State>(
@@ -10,7 +11,8 @@ const state = new Proxy<State>(
     count: 0,
     badCount: 0,
     goodCount: 0,
-    selectedNumbers: []
+    selectedNumbers: [],
+    attemptsCount: 0
   },
   {
     set(target, property, value) {
@@ -26,10 +28,22 @@ function updateUI() {
   const yesElement = document.getElementById('attempts-count-yes');
   const notElement = document.getElementById('attempts-count-not');
   const selectedNumbersList = document.getElementById('selected-numbers-list');
+  const attemptsInput = document.getElementById(
+    'attempts-input'
+  ) as HTMLInputElement;
 
   if (attemptsElement) attemptsElement.textContent = state.count.toString();
   if (yesElement) yesElement.textContent = state.goodCount.toString();
   if (notElement) notElement.textContent = state.badCount.toString();
+
+  // Синхронизируем поле ввода количества попыток с состоянием
+  if (attemptsInput) {
+    // Обновляем только если значение отличается, чтобы избежать циклических обновлений
+    const currentValue = parseInt(attemptsInput.value) || 0;
+    if (currentValue !== state.attemptsCount) {
+      attemptsInput.value = state.attemptsCount.toString();
+    }
+  }
 
   if (selectedNumbersList) {
     while (selectedNumbersList.firstChild) {
@@ -49,13 +63,26 @@ function updateUI() {
 
 function updateInstructionTextState() {
   const instructionText = document.getElementById('instruction-text');
-  if (instructionText) {
+  const attemptsText = document.getElementById('attempts-text');
+
+  if (instructionText && attemptsText) {
+    const isAttemptsEntered = state.attemptsCount > 0;
+
     if (state.selectedNumbers.length === 0) {
+      // Числа не выбраны - мигает первый текст
       instructionText.classList.add('instruction-text-blinking');
-      console.log('Мигание включено - числа не выбраны');
-    } else {
+      attemptsText.classList.remove('attempts-text-blinking');
+      console.log('Мигание первого текста - числа не выбраны');
+    } else if (!isAttemptsEntered) {
+      // Числа выбраны, но количество попыток не введено - мигает второй текст
       instructionText.classList.remove('instruction-text-blinking');
-      console.log('Мигание выключено - выбраны числа:', state.selectedNumbers);
+      attemptsText.classList.add('attempts-text-blinking');
+      console.log('Мигание второго текста - количество попыток не введено');
+    } else {
+      // Всё заполнено - ничего не мигает
+      instructionText.classList.remove('instruction-text-blinking');
+      attemptsText.classList.remove('attempts-text-blinking');
+      console.log('Всё заполнено - мигание выключено');
     }
   }
 }
@@ -64,6 +91,7 @@ export const counterState = {
   getCount: () => state.count,
   getBadCount: () => state.badCount,
   getGoodCount: () => state.goodCount,
+  getAttemptsCount: () => state.attemptsCount,
 
   setCount: (value: number) => {
     state.count = value;
@@ -73,6 +101,9 @@ export const counterState = {
   },
   setGoodCount: (value: number) => {
     state.goodCount = value;
+  },
+  setAttemptsCount: (value: number) => {
+    state.attemptsCount = value;
   },
   resetCounts: () => {
     state.count = 0;

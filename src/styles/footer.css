@@ -69,6 +69,10 @@
   animation: blinkRed 1.5s ease-in-out infinite;
 }
 
+.attempts-text-blinking {
+  animation: blinkRed 1.5s ease-in-out infinite;
+}
+
 @keyframes blinkRed {
   0% {
     color: #6cade5;

@@ -1,4 +1,4 @@
-import {selectedNumbersState} from './utils/state';
+import {selectedNumbersState, counterState} from './utils/state';
 import {answerInput} from './utils/ui';
 import {
   checkAnswer as checkAnswerUtil,
@@ -71,6 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Обработчик изменения поля количества попыток
+  const attemptsInput = document.getElementById(
+    'attempts-input'
+  ) as HTMLInputElement;
+  if (attemptsInput) {
+    attemptsInput.addEventListener('input', () => {
+      const value = parseInt(attemptsInput.value) || 0;
+      counterState.setAttemptsCount(value);
+      console.log(`Обновлено количество попыток в состоянии: ${value}`);
+    });
+  }
+
   // Добавление обработчиков в глобальный объект window для доступа из HTML
   (window as unknown as CustomWindow).checkAnswer = checkAnswer;
   (window as unknown as CustomWindow).handleListClick = handleListClick;
@@ -87,10 +99,4 @@ document.addEventListener('DOMContentLoaded', () => {
       handleListClick(event as MouseEvent);
     });
   });
-
-  // Инициализируем состояние текста инструкции (должен мигать в начале)
-  // const instructionText = document.getElementById('instruction-text');
-  // if (instructionText) {
-  //   instructionText.classList.add('instruction-text-blinking');
-  // }
 });
