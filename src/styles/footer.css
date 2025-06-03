@@ -82,7 +82,7 @@
     color: #6cade5;
   }
   50% {
-    color: #ff4444;
+    color: #ff0000;
     text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
   }
   100% {
@@ -96,7 +96,7 @@
     box-shadow: none;
   }
   50% {
-    background-color: #ff4444;
+    background-color: #ff0000;
     box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
   }
   100% {
