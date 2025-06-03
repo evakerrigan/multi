@@ -1,12 +1,12 @@
 # 🧮 EasyMultiply - Онлайн Тренажёр Таблицы Умножения
 
-**Попробуйте онлайн**: [https://easymultiply.com/](https://easymultiply.com/)
+**Попробуйте онлайн**: <a href="https://easymultiply.com/" target="_blank">https://easymultiply.com/</a>
 
-##  Описание
+## Описание
 
 EasyMultiply — это веб-приложение для эффективного изучения таблицы умножения. Основано на методе многократного повторения: чем чаще вы решаете одни и те же примеры, тем лучше запоминаете результат.
 
-##  Принцип работы
+## Принцип работы
 
 1. **Первый раз** — вы считаете ответ
 2. **Второй раз** — снова считаете
@@ -46,10 +46,8 @@ EasyMultiply — это веб-приложение для эффективно�
 - **Зелёная подсветка** — правильный ответ
 - **Красная подсветка** — неправильный ответ
 - **Статистика** — общие/успешные/неудачные попытки
- 
 
 ## 🚀 Быстрый старт
-
 
 [![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -88,7 +86,6 @@ npm run build
 npm run serve
 ```
 
-
 ## 🛠 Технологии
 
 - **Frontend Framework**: Vanilla JavaScript/TypeScript
@@ -112,7 +109,6 @@ multi/
 ├── vite.config.js     # Конфигурация Vite
 └── package.json       # Зависимости и скрипты
 ```
-
 
 ## 📝 Лицензия
 
