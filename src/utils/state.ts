@@ -64,25 +64,29 @@ function updateUI() {
 function updateInstructionTextState() {
   const instructionText = document.getElementById('instruction-text');
   const attemptsText = document.getElementById('attempts-text');
+  const startButton = document.getElementById('start');
 
-  if (instructionText && attemptsText) {
+  if (instructionText && attemptsText && startButton) {
     const isAttemptsEntered = state.attemptsCount > 0;
 
     if (state.selectedNumbers.length === 0) {
       // Числа не выбраны - мигает первый текст
       instructionText.classList.add('instruction-text-blinking');
       attemptsText.classList.remove('attempts-text-blinking');
+      startButton.classList.remove('button-start-blinking');
       console.log('Мигание первого текста - числа не выбраны');
     } else if (!isAttemptsEntered) {
       // Числа выбраны, но количество попыток не введено - мигает второй текст
       instructionText.classList.remove('instruction-text-blinking');
       attemptsText.classList.add('attempts-text-blinking');
+      startButton.classList.remove('button-start-blinking');
       console.log('Мигание второго текста - количество попыток не введено');
     } else {
-      // Всё заполнено - ничего не мигает
+      // Всё заполнено - мигает кнопка Старт
       instructionText.classList.remove('instruction-text-blinking');
       attemptsText.classList.remove('attempts-text-blinking');
-      console.log('Всё заполнено - мигание выключено');
+      startButton.classList.add('button-start-blinking');
+      console.log('Всё заполнено - мигает кнопка Старт');
     }
   }
 }

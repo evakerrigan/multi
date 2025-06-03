@@ -73,6 +73,10 @@
   animation: blinkRed 1.5s ease-in-out infinite;
 }
 
+.button-start-blinking {
+  animation: blinkButtonRed 1.5s ease-in-out infinite;
+}
+
 @keyframes blinkRed {
   0% {
     color: #6cade5;
@@ -83,6 +87,21 @@
   }
   100% {
     color: #6cade5;
+  }
+}
+
+@keyframes blinkButtonRed {
+  0% {
+    background-color: #5991c2;
+    box-shadow: none;
+  }
+  50% {
+    background-color: #ff4444;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+  }
+  100% {
+    background-color: #5991c2;
+    box-shadow: none;
   }
 }
 
@@ -192,6 +211,7 @@ ul.footer-list {
 
 .button-start:disabled {
   background-color: #adadad;
+  animation: none !important;
 }
 
 .button-start:disabled:hover {

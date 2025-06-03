@@ -78,7 +78,12 @@ export function startGame(): void {
 
   if (firstInput) firstInput.setAttribute('disabled', 'true');
   if (secondInput) secondInput.setAttribute('disabled', 'true');
-  if (startButton) startButton.setAttribute('disabled', 'true');
+  if (startButton) {
+    // Сначала убираем мигание кнопки
+    startButton.classList.remove('button-start-blinking');
+    // Затем отключаем кнопку
+    startButton.setAttribute('disabled', 'true');
+  }
 
   setFirstInputValue();
   counterState.resetCounts();
