@@ -76,6 +76,21 @@ document.addEventListener('DOMContentLoaded', () => {
     'attempts-input'
   ) as HTMLInputElement;
   if (attemptsInput) {
+
+    // Обработчик фокуса - очищает поле при клике
+    attemptsInput.addEventListener('focus', () => {
+      if (attemptsInput.value === '0') {
+        attemptsInput.value = '';
+      }
+    });
+
+    // Обработчик потери фокуса - если поле пустое, возвращаем 0
+    attemptsInput.addEventListener('blur', () => {
+      if (attemptsInput.value === '') {
+        attemptsInput.value = '0';
+      }
+    });
+
     attemptsInput.addEventListener('input', () => {
       const value = parseInt(attemptsInput.value) || 0;
       counterState.setAttemptsCount(value);
