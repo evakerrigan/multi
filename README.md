@@ -1,5 +1,7 @@
 # 🧮 EasyMultiply - Онлайн Тренажёр Таблицы Умножения
 
+🌐 **Попробуйте онлайн**: [https://easymultiply.com/](https://easymultiply.com/)
+
 [![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
