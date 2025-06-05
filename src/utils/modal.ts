@@ -12,6 +12,12 @@ export function openModal(): void {
     modalImage.src = gifPath;
   }
 
+  // Закрываем мобильную клавиатуру перед показом модального окна
+  const activeElement = document.activeElement as HTMLElement;
+  if (activeElement && typeof activeElement.blur === 'function') {
+    activeElement.blur();
+  }
+
   const modal = document.getElementById('modal');
   if (modal) {
     modal.style.display = 'flex';
