@@ -74,19 +74,16 @@ function updateInstructionTextState() {
       instructionText.classList.add('instruction-text-blinking');
       attemptsText.classList.remove('attempts-text-blinking');
       startButton.classList.remove('button-start-blinking');
-      console.log('Мигание первого текста - числа не выбраны');
     } else if (!isAttemptsEntered) {
       // Числа выбраны, но количество попыток не введено - мигает второй текст
       instructionText.classList.remove('instruction-text-blinking');
       attemptsText.classList.add('attempts-text-blinking');
       startButton.classList.remove('button-start-blinking');
-      console.log('Мигание второго текста - количество попыток не введено');
     } else {
       // Всё заполнено - мигает кнопка Старт
       instructionText.classList.remove('instruction-text-blinking');
       attemptsText.classList.remove('attempts-text-blinking');
       startButton.classList.add('button-start-blinking');
-      console.log('Всё заполнено - мигает кнопка Старт');
     }
   }
 }
@@ -129,21 +126,18 @@ export const selectedNumbersState = {
   getSelectedNumbers: () => state.selectedNumbers,
   addSelectedNumber: (num: number) => {
     if (!state.selectedNumbers.includes(num)) {
-      console.log(`Добавляю число ${num} в состояние`);
       state.selectedNumbers = [...state.selectedNumbers, num];
     }
   },
   removeSelectedNumber: (num: number) => {
     const index = state.selectedNumbers.indexOf(num);
     if (index > -1) {
-      console.log(`Удаляю число ${num} из состояния`);
       state.selectedNumbers = state.selectedNumbers.filter(
         (_, i) => i !== index
       );
     }
   },
   clearSelectedNumbers: () => {
-    console.log('Очищаю все выбранные числа');
     state.selectedNumbers = [];
   }
 };

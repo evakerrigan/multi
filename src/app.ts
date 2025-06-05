@@ -21,17 +21,9 @@ export function handleListClick(event: MouseEvent): void {
   if (target.classList.contains('list-item-selected')) {
     target.classList.remove('list-item-selected');
     selectedNumbersState.removeSelectedNumber(value);
-    console.log(
-      `Удален номер ${value}. Текущие выбранные:`,
-      selectedNumbersState.getSelectedNumbers()
-    );
   } else {
     target.classList.add('list-item-selected');
     selectedNumbersState.addSelectedNumber(value);
-    console.log(
-      `Добавлен номер ${value}. Текущие выбранные:`,
-      selectedNumbersState.getSelectedNumbers()
-    );
   }
 
   // Генерируем новый пример после выбора числа
@@ -64,19 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalButton.addEventListener('click', closeModalSuccess);
   }
 
+  // Обработчик отправки формы для мобильных устройств
+  const answerForm = document.getElementById('answer-form') as HTMLFormElement;
+  if (answerForm) {
+    answerForm.addEventListener('submit', (event) => {
+      event.preventDefault(); 
+      event.stopPropagation(); 
+      checkAnswer();
+    });
+  }
+
   // Обработчик нажатия Enter в поле ответа
   answerInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      event.preventDefault(); // Предотвращаем стандартное поведение
-      checkAnswer();
-    }
-  });
+      event.preventDefault(); 
+      event.stopPropagation(); 
 
-  // Дополнительный обработчик для мобильных устройств
-  answerInput.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      checkAnswer();
+      // Небольшая задержка чтобы убедиться что значение стабильно
+      setTimeout(() => {
+        checkAnswer();
+      }, 1);
     }
   });
 
@@ -102,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     attemptsInput.addEventListener('input', () => {
       const value = parseInt(attemptsInput.value) || 0;
       counterState.setAttemptsCount(value);
-      console.log(`Обновлено количество попыток в состоянии: ${value}`);
     });
   }
 
