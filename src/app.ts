@@ -67,6 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Обработчик нажатия Enter в поле ответа
   answerInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
+      event.preventDefault(); // Предотвращаем стандартное поведение
+      checkAnswer();
+    }
+  });
+
+  // Дополнительный обработчик для мобильных устройств
+  answerInput.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
       checkAnswer();
     }
   });
@@ -76,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     'attempts-input'
   ) as HTMLInputElement;
   if (attemptsInput) {
-
     // Обработчик фокуса - очищает поле при клике
     attemptsInput.addEventListener('focus', () => {
       if (attemptsInput.value === '0') {

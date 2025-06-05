@@ -36,10 +36,14 @@ export function closeModalSuccess(): void {
       'secondNumber'
     ) as HTMLInputElement;
     const startButton = document.getElementById('start') as HTMLButtonElement;
+    const attemptsInput = document.getElementById(
+      'attempts-input'
+    ) as HTMLInputElement;
 
     if (firstInput) firstInput.removeAttribute('disabled');
     if (secondInput) secondInput.removeAttribute('disabled');
     if (startButton) startButton.removeAttribute('disabled');
+    if (attemptsInput) attemptsInput.removeAttribute('disabled');
   }
 }
 
