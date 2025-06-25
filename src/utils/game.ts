@@ -87,17 +87,17 @@ export function startGame(): void {
   }
 
   // Логика начала игры
-  const firstInput = document.getElementById('firstNumber') as HTMLInputElement;
-  const secondInput = document.getElementById(
-    'secondNumber'
-  ) as HTMLInputElement;
+  // const firstInput = document.getElementById('firstNumber') as HTMLInputElement;
+  // const secondInput = document.getElementById(
+  //   'secondNumber'
+  // ) as HTMLInputElement;
   const startButton = document.getElementById('start') as HTMLButtonElement;
   const attemptsInput = document.getElementById(
     'attempts-input'
   ) as HTMLInputElement;
 
-  if (firstInput) firstInput.setAttribute('disabled', 'true');
-  if (secondInput) secondInput.setAttribute('disabled', 'true');
+  // if (firstInput) firstInput.setAttribute('disabled', 'true');
+  // if (secondInput) secondInput.setAttribute('disabled', 'true');
   if (startButton) {
     // Сначала убираем мигание кнопки
     startButton.classList.remove('button-start-blinking');
