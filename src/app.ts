@@ -219,6 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Обработка мобильной экранной клавиатуры ---
   const mobileKeyboard = document.getElementById('mobile-keyboard');
   const answerInputEl = document.getElementById('answer') as HTMLInputElement;
+  // На мобильных устройствах делаем поле только для чтения, чтобы не выезжала системная клавиатура
+  if (answerInputEl && window.innerWidth < 640) {
+    answerInputEl.setAttribute('readonly', 'readonly');
+  }
   if (mobileKeyboard && answerInputEl) {
     mobileKeyboard.addEventListener('click', (event) => {
       const target = event.target as HTMLElement;
