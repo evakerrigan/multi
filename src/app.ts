@@ -215,4 +215,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Инициализируем правильное мигание при загрузке страницы
   updateInstructionTextState();
+
+  // --- Обработка мобильной экранной клавиатуры ---
+  const mobileKeyboard = document.getElementById('mobile-keyboard');
+  const answerInputEl = document.getElementById('answer') as HTMLInputElement;
+  if (mobileKeyboard && answerInputEl) {
+    mobileKeyboard.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      if (!target.classList.contains('mobile-key')) return;
+      const key = target.getAttribute('data-key');
+      if (!key) return;
+      if (key === 'del') {
+        answerInputEl.value = answerInputEl.value.slice(0, -1);
+      } else if (key === 'ok') {
+        checkAnswer();
+      } else if (/^\d$/.test(key)) {
+        // Ограничим длину ответа 3 символами (например, 100)
+        if (answerInputEl.value.length < 3) {
+          answerInputEl.value += key;
+        }
+      }
+      // Фокусируем поле, чтобы курсор был виден
+      answerInputEl.focus();
+    });
+  }
 });
