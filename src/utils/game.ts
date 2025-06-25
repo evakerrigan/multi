@@ -3,7 +3,6 @@ import {
   secondInput,
   answerInput,
   messageBlock,
-  // attemptsInput,
   showSuccessEffect,
   showFailureEffect,
   updateCounters
@@ -87,22 +86,25 @@ export function startGame(): void {
   }
 
   // Логика начала игры
-  // const firstInput = document.getElementById('firstNumber') as HTMLInputElement;
-  // const secondInput = document.getElementById(
-  //   'secondNumber'
-  // ) as HTMLInputElement;
   const startButton = document.getElementById('start') as HTMLButtonElement;
   const attemptsInput = document.getElementById(
     'attempts-input'
   ) as HTMLInputElement;
+  const mobileStartButton = document.getElementById(
+    'mobile-start'
+  ) as HTMLButtonElement;
 
-  // if (firstInput) firstInput.setAttribute('disabled', 'true');
-  // if (secondInput) secondInput.setAttribute('disabled', 'true');
   if (startButton) {
     // Сначала убираем мигание кнопки
     startButton.classList.remove('button-start-blinking');
     // Затем отключаем кнопку
     startButton.setAttribute('disabled', 'true');
+  }
+
+  // Отключаем мобильную кнопку старта
+  if (mobileStartButton) {
+    mobileStartButton.classList.remove('button-start-blinking');
+    mobileStartButton.setAttribute('disabled', 'true');
   }
 
   // Дизейблим инпут с количеством попыток чтобы избежать фокуса на мобилке

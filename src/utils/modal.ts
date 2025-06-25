@@ -35,21 +35,30 @@ export function closeModalSuccess(): void {
     updateCounters();
 
     // Разблокировать инпуты и кнопку Старт
-    // const firstInput = document.getElementById(
-    //   'firstNumber'
-    // ) as HTMLInputElement;
-    // const secondInput = document.getElementById(
-    //   'secondNumber'
-    // ) as HTMLInputElement;
     const startButton = document.getElementById('start') as HTMLButtonElement;
     const attemptsInput = document.getElementById(
       'attempts-input'
     ) as HTMLInputElement;
+    const mobileStartButton = document.getElementById(
+      'mobile-start'
+    ) as HTMLButtonElement;
+    const mobileAttemptsInput = document.getElementById(
+      'mobile-attempts-input'
+    ) as HTMLInputElement;
 
-    // if (firstInput) firstInput.removeAttribute('disabled');
-    // if (secondInput) secondInput.removeAttribute('disabled');
     if (startButton) startButton.removeAttribute('disabled');
     if (attemptsInput) attemptsInput.removeAttribute('disabled');
+    if (mobileStartButton) mobileStartButton.removeAttribute('disabled');
+    if (mobileAttemptsInput) mobileAttemptsInput.removeAttribute('disabled');
+
+    // Возврат к экрану настройки на мобильных устройствах
+    const mobileSetupScreen = document.getElementById('mobile-setup-screen');
+    const mainGameScreen = document.getElementById('main-game-screen');
+
+    if (mobileSetupScreen && mainGameScreen && window.innerWidth <= 639) {
+      mobileSetupScreen.style.display = 'flex';
+      mainGameScreen.classList.remove('mobile-active');
+    }
   }
 }
 

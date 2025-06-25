@@ -31,17 +31,29 @@ function updateUI() {
   const attemptsInput = document.getElementById(
     'attempts-input'
   ) as HTMLInputElement;
+  const mobileAttemptsInput = document.getElementById(
+    'mobile-attempts-input'
+  ) as HTMLInputElement;
 
   if (attemptsElement) attemptsElement.textContent = state.count.toString();
   if (yesElement) yesElement.textContent = state.goodCount.toString();
   if (notElement) notElement.textContent = state.badCount.toString();
 
-  // Синхронизируем поле ввода количества попыток с состоянием
+  // Синхронизируем поле ввода количества попыток с состоянием (десктоп)
   if (attemptsInput) {
     // Обновляем только если значение отличается, чтобы избежать циклических обновлений
     const currentValue = parseInt(attemptsInput.value) || 0;
     if (currentValue !== state.attemptsCount) {
       attemptsInput.value = state.attemptsCount.toString();
+    }
+  }
+
+  // Синхронизируем поле ввода количества попыток с состоянием (мобильный)
+  if (mobileAttemptsInput) {
+    // Обновляем только если значение отличается, чтобы избежать циклических обновлений
+    const currentValue = parseInt(mobileAttemptsInput.value) || 0;
+    if (currentValue !== state.attemptsCount) {
+      mobileAttemptsInput.value = state.attemptsCount.toString();
     }
   }
 
@@ -61,14 +73,23 @@ function updateUI() {
   updateInstructionTextState();
 }
 
-function updateInstructionTextState() {
+export function updateInstructionTextState() {
+  // Десктопные элементы
   const instructionText = document.getElementById('instruction-text');
   const attemptsText = document.getElementById('attempts-text');
   const startButton = document.getElementById('start');
 
-  if (instructionText && attemptsText && startButton) {
-    const isAttemptsEntered = state.attemptsCount > 0;
+  // Мобильные элементы
+  const mobileInstructionText = document.querySelector(
+    '.mobile-instruction-text'
+  );
+  const mobileAttemptsText = document.querySelector('.mobile-attempts-text');
+  const mobileStartButton = document.getElementById('mobile-start');
 
+  const isAttemptsEntered = state.attemptsCount > 0;
+
+  // Обновляем десктопные элементы
+  if (instructionText && attemptsText && startButton) {
     if (state.selectedNumbers.length === 0) {
       // Числа не выбраны - мигает первый текст
       instructionText.classList.add('instruction-text-blinking');
@@ -84,6 +105,26 @@ function updateInstructionTextState() {
       instructionText.classList.remove('instruction-text-blinking');
       attemptsText.classList.remove('attempts-text-blinking');
       startButton.classList.add('button-start-blinking');
+    }
+  }
+
+  // Обновляем мобильные элементы
+  if (mobileInstructionText && mobileAttemptsText && mobileStartButton) {
+    if (state.selectedNumbers.length === 0) {
+      // Числа не выбраны - мигает первый текст
+      mobileInstructionText.classList.add('instruction-text-blinking');
+      mobileAttemptsText.classList.remove('attempts-text-blinking');
+      mobileStartButton.classList.remove('button-start-blinking');
+    } else if (!isAttemptsEntered) {
+      // Числа выбраны, но количество попыток не введено - мигает второй текст
+      mobileInstructionText.classList.remove('instruction-text-blinking');
+      mobileAttemptsText.classList.add('attempts-text-blinking');
+      mobileStartButton.classList.remove('button-start-blinking');
+    } else {
+      // Всё заполнено - мигает кнопка Старт
+      mobileInstructionText.classList.remove('instruction-text-blinking');
+      mobileAttemptsText.classList.remove('attempts-text-blinking');
+      mobileStartButton.classList.add('button-start-blinking');
     }
   }
 }

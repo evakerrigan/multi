@@ -27,10 +27,6 @@ body {
 
 .main-container {
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 
 button {
@@ -85,11 +81,166 @@ input[type='number']::-webkit-outer-spin-button {
   width: 100%;
 }
 
+/* ******************** МОБИЛЬНЫЕ ЭКРАНЫ ******************** */
+
+/* Мобильный экран настройки */
+.mobile-setup-screen {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  background-color: #282c35;
+  color: #6cade5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mobile-setup-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mobile-setup-container h2 {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 1.8rem;
+}
+
+.mobile-setup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.mobile-instruction-text {
+  text-align: center;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.mobile-footer-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mobile-footer-list li {
+  padding: 12px 16px;
+  border: 1px solid #6cade5;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.mobile-footer-list li:hover {
+  background-color: rgba(108, 173, 229, 0.2);
+}
+
+.mobile-footer-list li.list-item-selected {
+  background-color: rgba(108, 173, 229, 0.367);
+}
+
+.mobile-attempts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-attempts-text {
+  text-align: center;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.mobile-footer-input {
+  height: 50px;
+  width: 80px;
+  font-size: 1.5rem;
+  font-family: 'Segoe UI';
+  border: none;
+  background-color: #282c35;
+  border-bottom: 1px solid #6cade5;
+  color: #6cade5;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.mobile-footer-input:focus {
+  outline: none;
+  border-bottom: 2px solid #6cade5;
+}
+
+.mobile-button-start {
+  color: white;
+  background-color: #5991c2;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-button-start:hover {
+  background-color: #6cade5;
+}
+
+.mobile-button-start:disabled {
+  background-color: #adadad;
+  cursor: not-allowed;
+}
+
+/* Основной экран игры */
+.main-game-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Класс для скрытия элементов на мобильных устройствах */
+.desktop-only {
+  display: block;
+}
+
 @media screen and (max-width: 450px) {
   .multi-input {
     font-size: 2.5rem;
   }
   .message {
     bottom: -60px;
+  }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 639px) {
+  .mobile-setup-screen {
+    display: flex;
+  }
+
+  .main-game-screen {
+    display: none;
+  }
+
+  .main-game-screen.mobile-active {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none !important;
   }
 }

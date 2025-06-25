@@ -12,6 +12,9 @@ import {
 } from './utils/modal';
 import {CustomWindow} from './types';
 
+// Импортируем функцию для обновления мигания
+import {updateInstructionTextState} from './utils/state';
+
 // Обработчики событий
 export function handleListClick(event: MouseEvent): void {
   const target = event.target as HTMLElement;
@@ -28,6 +31,33 @@ export function handleListClick(event: MouseEvent): void {
 
   // Генерируем новый пример после выбора числа
   setFirstInputValue();
+}
+
+// Функция для переключения на мобильный экран игры
+function switchToMobileGameScreen(): void {
+  const mobileSetupScreen = document.getElementById('mobile-setup-screen');
+  const mainGameScreen = document.getElementById('main-game-screen');
+
+  if (mobileSetupScreen && mainGameScreen) {
+    mobileSetupScreen.style.display = 'none';
+    mainGameScreen.classList.add('mobile-active');
+  }
+}
+
+// Функция для синхронизации мобильного инпута с основным
+function syncMobileAttemptsInput(): void {
+  const mobileAttemptsInput = document.getElementById(
+    'mobile-attempts-input'
+  ) as HTMLInputElement;
+  const desktopAttemptsInput = document.getElementById(
+    'attempts-input'
+  ) as HTMLInputElement;
+
+  if (mobileAttemptsInput && desktopAttemptsInput) {
+    const value = parseInt(mobileAttemptsInput.value) || 0;
+    desktopAttemptsInput.value = value.toString();
+    counterState.setAttemptsCount(value);
+  }
 }
 
 // Реэкспорт функции checkAnswer для импорта в HTML
@@ -60,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const answerForm = document.getElementById('answer-form') as HTMLFormElement;
   if (answerForm) {
     answerForm.addEventListener('submit', (event) => {
-      event.preventDefault(); 
-      event.stopPropagation(); 
+      event.preventDefault();
+      event.stopPropagation();
       checkAnswer();
     });
   }
@@ -69,8 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Обработчик нажатия Enter в поле ответа
   answerInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      event.preventDefault(); 
-      event.stopPropagation(); 
+      event.preventDefault();
+      event.stopPropagation();
 
       // Небольшая задержка чтобы убедиться что значение стабильно
       setTimeout(() => {
@@ -79,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Обработчик изменения поля количества попыток
+  // Обработчик изменения поля количества попыток (десктоп)
   const attemptsInput = document.getElementById(
     'attempts-input'
   ) as HTMLInputElement;
@@ -104,20 +134,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Обработчик изменения поля количества попыток (мобильный)
+  const mobileAttemptsInput = document.getElementById(
+    'mobile-attempts-input'
+  ) as HTMLInputElement;
+  if (mobileAttemptsInput) {
+    // Обработчик фокуса - очищает поле при клике
+    mobileAttemptsInput.addEventListener('focus', () => {
+      if (mobileAttemptsInput.value === '0') {
+        mobileAttemptsInput.value = '';
+      }
+    });
+
+    // Обработчик потери фокуса - если поле пустое, возвращаем 0
+    mobileAttemptsInput.addEventListener('blur', () => {
+      if (mobileAttemptsInput.value === '') {
+        mobileAttemptsInput.value = '0';
+      }
+    });
+
+    mobileAttemptsInput.addEventListener('input', () => {
+      const value = parseInt(mobileAttemptsInput.value) || 0;
+      counterState.setAttemptsCount(value);
+    });
+  }
+
   // Добавление обработчиков в глобальный объект window для доступа из HTML
   (window as unknown as CustomWindow).checkAnswer = checkAnswer;
   (window as unknown as CustomWindow).handleListClick = handleListClick;
 
-  // Настройка обработчиков для кнопки Старт
+  // Настройка обработчиков для кнопки Старт (десктоп)
   const startButton = document.getElementById('start');
   if (startButton) {
     startButton.addEventListener('click', startGame);
   }
 
-  // Подключаем обработчики кликов для элементов списка чисел
+  // Настройка обработчиков для кнопки Старт (мобильный)
+  const mobileStartButton = document.getElementById('mobile-start');
+  if (mobileStartButton) {
+    mobileStartButton.addEventListener('click', () => {
+      // Синхронизируем значения перед стартом
+      syncMobileAttemptsInput();
+
+      // Проверяем валидность данных перед стартом
+      const selectedNumbers = selectedNumbersState.getSelectedNumbers();
+      const attemptsCount = counterState.getAttemptsCount();
+
+      // Если не выбраны числа или не установлено количество попыток - не стартуем игру
+      if (selectedNumbers.length === 0) {
+        alert('Выберите хотя бы одно число для изучения');
+        return;
+      }
+
+      if (attemptsCount <= 0) {
+        alert('Введите количество успешных попыток (больше 0)');
+        return;
+      }
+
+      // Переключаемся на экран игры
+      switchToMobileGameScreen();
+
+      // Запускаем игру
+      startGame();
+    });
+  }
+
+  // Подключаем обработчики кликов для элементов списка чисел (десктоп)
   document.querySelectorAll('.footer-list li').forEach((li) => {
     li.addEventListener('click', (event) => {
       handleListClick(event as MouseEvent);
     });
   });
+
+  // Подключаем обработчики кликов для элементов списка чисел (мобильный)
+  document.querySelectorAll('.mobile-footer-list li').forEach((li) => {
+    li.addEventListener('click', (event) => {
+      handleListClick(event as MouseEvent);
+    });
+  });
+
+  // Инициализируем правильное мигание при загрузке страницы
+  updateInstructionTextState();
 });
