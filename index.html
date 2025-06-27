@@ -131,6 +131,26 @@
 
       <!-- Основной экран (скрыт на мобильных устройствах во время настройки) -->
       <div id="main-game-screen" class="main-game-screen">
+        <!-- Мобильный блок статистики (виден только на экранах < 640px) -->
+        <div id="mobile-stats" class="mobile-stats">
+          <div class="mobile-stats-container">
+            <div>
+              Всего:
+              <span id="attempts-count-temp" class="attempts-count temp">
+                0</span
+              >
+            </div>
+            <div>
+              Успешно:
+              <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
+            </div>
+            <div>
+              Неудачно:
+              <span id="attempts-count-not" class="attempts-count not"> 0</span>
+            </div>
+          </div>
+        </div>
+
         <div class="main">
           <div class="main-container">
             <div class="multi-container">
@@ -244,7 +264,7 @@
                 </button>
                 <button type="button" class="mobile-key" data-key="0">0</button>
                 <button type="button" class="mobile-key" data-key="ok">
-                  ↵
+                  =
                 </button>
               </div>
             </div>

@@ -240,6 +240,16 @@ ul.footer-list {
     justify-content: space-between;
   }
   .middle-child {
-    justify-content: space-between;
+    justify-content: space-between;  
+  }
+}
+
+/* Скрываем десктопный блок статистики на мобильных устройствах */
+@media screen and (max-width: 639px) {
+  .last-child {
+    display: none !important;
+  }
+  .footer-container {
+    padding: 0;
   }
 }
