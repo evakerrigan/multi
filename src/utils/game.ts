@@ -7,7 +7,7 @@ import {
   showFailureEffect,
   updateCounters
 } from './ui';
-import {counterState, selectedNumbersState} from './state';
+import {counterState, gameStartedState, selectedNumbersState} from './state';
 import {openModal} from './modal';
 
 export function generateRandomNumberAndSetToSecondInput(): void {
@@ -73,6 +73,8 @@ export function startGame(): void {
   // Проверяем валидность данных перед стартом
   const selectedNumbers = selectedNumbersState.getSelectedNumbers();
   const attemptsCount = counterState.getAttemptsCount();
+
+  gameStartedState.setGameStartedState(true);
 
   // Если не выбраны числа или не установлено количество попыток - не стартуем игру
   if (selectedNumbers.length === 0) {

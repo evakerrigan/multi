@@ -1,5 +1,5 @@
 import {getRandomGifNumber} from './getRandomGif';
-import {counterState, selectedNumbersState} from './state';
+import {counterState, gameStartedState, selectedNumbersState} from './state';
 import {resetInputs, removeListItemSelectedClasses, updateCounters} from './ui';
 
 export function openModal(): void {
@@ -28,6 +28,7 @@ export function closeModalSuccess(): void {
   const modal = document.getElementById('modal');
   if (modal) {
     modal.style.display = 'none';
+    gameStartedState.setGameStartedState(false);
     counterState.resetCounts();
     selectedNumbersState.clearSelectedNumbers();
     resetInputs();

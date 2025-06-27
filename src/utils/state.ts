@@ -1,4 +1,5 @@
 type State = {
+  isGameStarted: boolean;
   count: number;
   badCount: number;
   goodCount: number;
@@ -8,6 +9,7 @@ type State = {
 
 const state = new Proxy<State>(
   {
+    isGameStarted: false,
     count: 0,
     badCount: 0,
     goodCount: 0,
@@ -22,6 +24,14 @@ const state = new Proxy<State>(
     }
   }
 );
+
+export const gameStartedState = {
+  getGameStartedState: () => state.isGameStarted,
+
+  setGameStartedState: (value: boolean) => {
+    state.isGameStarted = value;
+  }
+};
 
 function updateUI() {
   // Мобильные элементы статистики
