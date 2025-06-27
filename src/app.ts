@@ -1,4 +1,8 @@
-import {selectedNumbersState, counterState} from './utils/state';
+import {
+  selectedNumbersState,
+  counterState,
+  gameStartedState
+} from './utils/state';
 import {answerInput} from './utils/ui';
 import {
   checkAnswer as checkAnswerUtil,
@@ -17,6 +21,11 @@ import {updateInstructionTextState} from './utils/state';
 
 // Обработчики событий
 export function handleListClick(event: MouseEvent): void {
+  // Проверяем, не началась ли уже игра
+  if (gameStartedState.getGameStartedState()) {
+    return; // Блокируем выбор чисел если игра уже началась
+  }
+
   const target = event.target as HTMLElement;
 
   // Проверяем, является ли кликнутый элемент кнопкой "Все"

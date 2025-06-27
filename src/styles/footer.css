@@ -175,6 +175,31 @@ ul.footer-list {
   background-color: rgba(108, 173, 229, 0.367);
 }
 
+/* Применяем заблокированное состояние ко всем элементам списка когда игра началась */
+.game-started .footer-list li,
+.game-started .mobile-footer-list li {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  background-color: #444 !important;
+  border-color: #666 !important;
+  color: #888 !important;
+}
+
+.game-started .footer-list li:hover,
+.game-started .mobile-footer-list li:hover {
+  background-color: #444 !important;
+  border-color: #666 !important;
+  color: #888 !important;
+}
+
+/* Сохраняем выделение для уже выбранных элементов даже в заблокированном состоянии */
+.game-started .footer-list li.list-item-selected,
+.game-started .mobile-footer-list li.list-item-selected {
+  background-color: rgba(108, 173, 229, 0.2) !important;
+  border-color: #6cade5 !important;
+  color: #6cade5 !important;
+}
+
 .attempts-container {
   display: flex;
   align-items: center;
@@ -240,7 +265,7 @@ ul.footer-list {
     justify-content: space-between;
   }
   .middle-child {
-    justify-content: space-between;  
+    justify-content: space-between;
   }
 }
 

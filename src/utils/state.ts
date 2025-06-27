@@ -58,6 +58,16 @@ function updateUI() {
     'mobile-attempts-input'
   ) as HTMLInputElement;
 
+  // Обновляем состояние заблокированных элементов списка
+  const footerContainer = document.querySelector('.footer-container');
+  if (footerContainer) {
+    if (state.isGameStarted) {
+      footerContainer.classList.add('game-started');
+    } else {
+      footerContainer.classList.remove('game-started');
+    }
+  }
+
   // Обновляем мобильные элементы
   if (attemptsElement) attemptsElement.textContent = state.count.toString();
   if (yesElement) yesElement.textContent = state.goodCount.toString();
