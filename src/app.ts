@@ -63,6 +63,18 @@ function syncMobileAttemptsInput(): void {
 // Реэкспорт функции checkAnswer для импорта в HTML
 export const checkAnswer = checkAnswerUtil;
 
+// Функция для управления атрибутом readonly в зависимости от ширины экрана
+function updateReadonlyState(): void {
+  const answerInputEl = document.getElementById('answer') as HTMLInputElement;
+  if (answerInputEl) {
+    if (window.innerWidth < 640) {
+      answerInputEl.setAttribute('readonly', 'readonly');
+    } else {
+      answerInputEl.removeAttribute('readonly');
+    }
+  }
+}
+
 // Инициализация приложения
 document.addEventListener('DOMContentLoaded', () => {
   // Настройка модальных окон
@@ -219,10 +231,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Обработка мобильной экранной клавиатуры ---
   const mobileKeyboard = document.getElementById('mobile-keyboard');
   const answerInputEl = document.getElementById('answer') as HTMLInputElement;
-  // На мобильных устройствах делаем поле только для чтения, чтобы не выезжала системная клавиатура
-  if (answerInputEl && window.innerWidth < 640) {
-    answerInputEl.setAttribute('readonly', 'readonly');
-  }
+
+  // Инициализируем состояние readonly при загрузке
+  updateReadonlyState();
+
+  // Добавляем слушатель изменения размера окна
+  window.addEventListener('resize', updateReadonlyState);
+
   if (mobileKeyboard && answerInputEl) {
     mobileKeyboard.addEventListener('click', (event) => {
       const target = event.target as HTMLElement;
