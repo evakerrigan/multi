@@ -1,75 +1,63 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Таблица умножения онлайн - тренировка памяти | MultiTable</title>
-    <meta
-      name="description"
-      content="Онлайн игра для изучения таблицы умножения. Повторяй примеры чтобы выучить."
-    />
-    <meta
-      property="og:title"
-      content="Таблица умножения онлайн - тренировка памяти | MultiTable"
-    />
-    <meta
-      property="og:description"
-      content="Играйте онлайн и учите таблицу умножения. Повторяйте примеры для улучшения памяти."
-    />
 
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, maximum-scale=1"
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <title>Таблица умножения онлайн - тренировка памяти | MultiTable</title>
+  <meta name="description" content="Онлайн игра для изучения таблицы умножения. Повторяй примеры чтобы выучить." />
+  <meta property="og:title" content="Таблица умножения онлайн - тренировка памяти | MultiTable" />
+  <meta property="og:description"
+    content="Играйте онлайн и учите таблицу умножения. Повторяйте примеры для улучшения памяти." />
 
-      gtag('config', 'G-M5P6W57SP1');
-    </script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
+  <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M5P6W57SP1');
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
         }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        'script',
-        'https://mc.yandex.ru/metrika/tag.js',
-        'ym'
-      );
+      }
+      (k = e.createElement(t)),
+        (a = e.getElementsByTagName(t)[0]),
+        (k.async = 1),
+        (k.src = r),
+        a.parentNode.insertBefore(k, a);
+    })(
+      window,
+      document,
+      'script',
+      'https://mc.yandex.ru/metrika/tag.js',
+      'ym'
+    );
 
-      ym(100520750, 'init', {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true
-      });
-    </script>
-    <!-- /Yandex.Metrika counter -->
-    <script type="application/ld+json">
+    ym(100520750, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Game",
@@ -81,21 +69,93 @@
         }
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-C3KVzGli.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DdXGHyDT.css">
-  </head>
+  <script type="module" crossorigin src="/assets/index-C3KVzGli.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DdXGHyDT.css">
+</head>
 
-  <body>
-    <div id="app" class="app">
-      <!-- Мобильный экран настройки (виден только на экранах < 640px) -->
-      <div id="mobile-setup-screen" class="mobile-setup-screen">
-        <div class="mobile-setup-container">
-          <h2>Настройка игры</h2>
-          <div class="mobile-setup-section">
-            <p class="mobile-instruction-text instruction-text-blinking">
+<body>
+  <div id="app" class="app">
+    <!-- Мобильный экран настройки (виден только на экранах < 640px) -->
+    <div id="mobile-setup-screen" class="mobile-setup-screen">
+      <div class="mobile-setup-container">
+        <h2>Настройка игры</h2>
+        <div class="mobile-setup-section">
+          <p class="mobile-instruction-text instruction-text-blinking">
+            Выберите число, умножение на которое надо выучить
+          </p>
+          <ul class="mobile-footer-list">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>Все</li>
+          </ul>
+        </div>
+        <div class="mobile-setup-section">
+          <div class="mobile-attempts-container">
+            <p class="mobile-attempts-text">
+              Введите количество успешных попыток:
+            </p>
+            <input class="mobile-footer-input" type="number" id="mobile-attempts-input" />
+          </div>
+        </div>
+        <div class="mobile-setup-section">
+          <button id="mobile-start" class="mobile-button-start">Старт</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основной экран (скрыт на мобильных устройствах во время настройки) -->
+    <div id="main-game-screen" class="main-game-screen">
+      <!-- Мобильный блок статистики (виден только на экранах < 640px) -->
+      <div id="mobile-stats" class="mobile-stats">
+        <div class="mobile-stats-container">
+          <div>
+            Всего:
+            <span id="attempts-count-temp" class="attempts-count temp">
+              0</span>
+          </div>
+          <div>
+            Успешно:
+            <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
+          </div>
+          <div>
+            Неудачно:
+            <span id="attempts-count-not" class="attempts-count not"> 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="main-container">
+          <div class="multi-container">
+            <form id="answer-form" style="display: contents">
+              <input type="number" id="firstNumber" class="multi-input" disabled />
+              <span> x </span>
+              <input type="number" id="secondNumber" class="multi-input" disabled />
+              <button type="button" id="done" onclick="checkAnswer()">
+                =
+              </button>
+              <input type="number" id="answer" class="multi-input" inputmode="numeric" />
+            </form>
+          </div>
+          <p id="message" class="message"></p>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <div class="footer-container">
+          <div class="footer-content first-child desktop-only">
+            <p id="instruction-text" class="instruction-text-blinking">
               Выберите число, умножение на которое надо выучить
             </p>
-            <ul class="mobile-footer-list">
+            <ul class="footer-list">
               <li>0</li>
               <li>1</li>
               <li>2</li>
@@ -110,243 +170,132 @@
               <li>Все</li>
             </ul>
           </div>
-          <div class="mobile-setup-section">
-            <div class="mobile-attempts-container">
-              <p class="mobile-attempts-text">
-                Введите количество успешных попыток:
-              </p>
-              <input
-                class="mobile-footer-input"
-                type="number"
-                id="mobile-attempts-input"
-              />
+          <div class="footer-content middle-child desktop-only">
+            <div class="footer-content">
+              <div class="attempts-container">
+                <p class="" id="attempts-text">
+                  Введите количество<br />
+                  успешных попыток:
+                </p>
+                <input class="footer-input" type="number" id="attempts-input" />
+              </div>
+            </div>
+            <div class="footer-content">
+              <button id="start" class="button-start">Старт</button>
             </div>
           </div>
-          <div class="mobile-setup-section">
-            <button id="mobile-start" class="mobile-button-start">Старт</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Основной экран (скрыт на мобильных устройствах во время настройки) -->
-      <div id="main-game-screen" class="main-game-screen">
-        <!-- Мобильный блок статистики (виден только на экранах < 640px) -->
-        <div id="mobile-stats" class="mobile-stats">
-          <div class="mobile-stats-container">
+          <div class="footer-content last-child">
             <div>
               Всего:
-              <span id="attempts-count-temp" class="attempts-count temp">
-                0</span
-              >
+              <span id="desktop-attempts-count-temp" class="attempts-count temp">
+                0</span>
             </div>
             <div>
               Успешно:
-              <span id="attempts-count-yes" class="attempts-count yes"> 0</span>
+              <span id="desktop-attempts-count-yes" class="attempts-count yes">
+                0</span>
             </div>
             <div>
               Неудачно:
-              <span id="attempts-count-not" class="attempts-count not"> 0</span>
+              <span id="desktop-attempts-count-not" class="attempts-count not">
+                0</span>
+            </div>
+          </div>
+          <!-- Экранная клавиатура для мобильных устройств -->
+          <div id="mobile-keyboard" class="mobile-keyboard">
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="1">1</button>
+              <button type="button" class="mobile-key" data-key="2">2</button>
+              <button type="button" class="mobile-key" data-key="3">3</button>
+            </div>
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="4">4</button>
+              <button type="button" class="mobile-key" data-key="5">5</button>
+              <button type="button" class="mobile-key" data-key="6">6</button>
+            </div>
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="7">7</button>
+              <button type="button" class="mobile-key" data-key="8">8</button>
+              <button type="button" class="mobile-key" data-key="9">9</button>
+            </div>
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="del">
+                ⌫
+              </button>
+              <button type="button" class="mobile-key" data-key="0">0</button>
+              <button type="button" class="mobile-key" data-key="ok">
+                =
+              </button>
             </div>
           </div>
         </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Модальное окно успешного выполнения -->
 
-        <div class="main">
-          <div class="main-container">
-            <div class="multi-container">
-              <form id="answer-form" style="display: contents">
-                <input
-                  type="number"
-                  id="firstNumber"
-                  class="multi-input"
-                  disabled
-                />
-                <span> x </span>
-                <input
-                  type="number"
-                  id="secondNumber"
-                  class="multi-input"
-                  disabled
-                />
-                <button type="button" id="done" onclick="checkAnswer()">
-                  =
-                </button>
-                <input
-                  type="number"
-                  id="answer"
-                  class="multi-input"
-                  inputmode="numeric"
-                />
-              </form>
-            </div>
-            <p id="message" class="message"></p>
-          </div>
-        </div>
-        <footer class="page-footer">
-          <div class="footer-container">
-            <div class="footer-content first-child desktop-only">
-              <p id="instruction-text" class="instruction-text-blinking">
-                Выберите число, умножение на которое надо выучить
-              </p>
-              <ul class="footer-list">
-                <li>0</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>Все</li>
-              </ul>
-            </div>
-            <div class="footer-content middle-child desktop-only">
-              <div class="footer-content">
-                <div class="attempts-container">
-                  <p class="" id="attempts-text">
-                    Введите количество<br />
-                    успешных попыток:
-                  </p>
-                  <input
-                    class="footer-input"
-                    type="number"
-                    id="attempts-input"
-                  />
-                </div>
-              </div>
-              <div class="footer-content">
-                <button id="start" class="button-start">Старт</button>
-              </div>
-            </div>
-            <div class="footer-content last-child">
-              <div>
-                Всего:
-                <span
-                  id="desktop-attempts-count-temp"
-                  class="attempts-count temp"
-                >
-                  0</span
-                >
-              </div>
-              <div>
-                Успешно:
-                <span
-                  id="desktop-attempts-count-yes"
-                  class="attempts-count yes"
-                >
-                  0</span
-                >
-              </div>
-              <div>
-                Неудачно:
-                <span
-                  id="desktop-attempts-count-not"
-                  class="attempts-count not"
-                >
-                  0</span
-                >
-              </div>
-            </div>
-            <!-- Экранная клавиатура для мобильных устройств -->
-            <div id="mobile-keyboard" class="mobile-keyboard">
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="1">1</button>
-                <button type="button" class="mobile-key" data-key="2">2</button>
-                <button type="button" class="mobile-key" data-key="3">3</button>
-              </div>
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="4">4</button>
-                <button type="button" class="mobile-key" data-key="5">5</button>
-                <button type="button" class="mobile-key" data-key="6">6</button>
-              </div>
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="7">7</button>
-                <button type="button" class="mobile-key" data-key="8">8</button>
-                <button type="button" class="mobile-key" data-key="9">9</button>
-              </div>
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="del">
-                  ⌫
-                </button>
-                <button type="button" class="mobile-key" data-key="0">0</button>
-                <button type="button" class="mobile-key" data-key="ok">
-                  =
-                </button>
-              </div>
-            </div>
-          </div>
-        </footer>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalSuccess" class="close-instruction">&times;</span>
+      <h2>Поздравляем!</h2>
+      <p>Отличная работа! Вы успешно справились с заданием!</p>
+      <div class="modal-image-success-container">
+        <img alt="gif" class="modal-image-success" />
       </div>
     </div>
-    <!-- Модальное окно успешного выполнения -->
+  </div>
 
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span id="closeModalSuccess" class="close-instruction">&times;</span>
-        <h2>Поздравляем!</h2>
-        <p>Отличная работа! Вы успешно справились с заданием!</p>
-        <div class="modal-image-success-container">
-          <img alt="gif" class="modal-image-success" />
-        </div>
+  <!-- Модальное окно с инструкцией -->
+  <div class="header-instruction">
+    <div id="instructionButton" class="settings-button">i</div>
+    <div id="restartButton" class="settings-button">r</div>
+  </div>
+
+  <div id="instructionModal" class="modal">
+    <div class="modal-content">
+      <span class="close-instruction">&times;</span>
+      <p>
+        Приложение для заучивания таблицы умножения методом многократного
+        повторении одних и тех же примеров
+      </p>
+      <ul class="modal-instruction-description-list">
+        <li>Первый раз вы посчитаете ответ.</li>
+        <li>Второй раз - снова посчитаете.</li>
+        <li>
+          На последующие повторения этого же примера вы вспомните: "Я же 5
+          минут назад уже отвечал на этот пример, там было такое то число."
+        </li>
+      </ul>
+      <p>Инструкция:</p>
+      <ul class="modal-instruction-list">
+        <li>
+          <p>
+            Выберите число (или числа), умножение на которое надо выучить.
+          </p>
+          <img src="/images/1.png" alt="step1" class="modal-image" />
+        </li>
+        <li>
+          <p>Введите количество правильных попыток (рекомендую 100).</p>
+          <img src="/images/2.png" alt="step2" class="modal-image" />
+        </li>
+        <li>
+          <p>Нажмите кнопку "Старт".</p>
+          <img src="/images/3.png" alt="step3" class="modal-image" />
+        </li>
+      </ul>
+      <div class="modal-about">
+        tg для связи:
+        <a href="https://t.me/EvaKerrigan" target="_blank">EvaKerrigan</a>
       </div>
     </div>
-
-    <!-- Модальное окно с инструкцией -->
-    <div class="header-instruction">
-      <div id="instructionButton" class="settings-button">i</div>
-      <div id="restartButton" class="settings-button">r</div>
-    </div>
-
-    <div id="instructionModal" class="modal">
-      <div class="modal-content">
-        <span class="close-instruction">&times;</span>
-        <p>
-          Приложение для заучивания таблицы умножения методом многократного
-          повторении одних и тех же примеров
-        </p>
-        <ul class="modal-instruction-description-list">
-          <li>Первый раз вы посчитаете ответ.</li>
-          <li>Второй раз - снова посчитаете.</li>
-          <li>
-            На последующие повторения этого же примера вы вспомните: "Я же 5
-            минут назад уже отвечал на этот пример, там было такое то число."
-          </li>
-        </ul>
-        <p>Инструкция:</p>
-        <ul class="modal-instruction-list">
-          <li>
-            <p>
-              Выберите число (или числа), умножение на которое надо выучить.
-            </p>
-            <img src="/images/1.png" alt="step1" class="modal-image" />
-          </li>
-          <li>
-            <p>Введите количество правильных попыток (рекомендую 100).</p>
-            <img src="/images/2.png" alt="step2" class="modal-image" />
-          </li>
-          <li>
-            <p>Нажмите кнопку "Старт".</p>
-            <img src="/images/3.png" alt="step3" class="modal-image" />
-          </li>
-        </ul>
-        <div class="modal-about">
-          tg для связи:
-          <a href="https://t.me/EvaKerrigan" target="_blank">EvaKerrigan</a>
-        </div>
-      </div>
-    </div>
+  </div>
 
 
-    <noscript>
-      <div>
-        <img
-          src="https://mc.yandex.ru/watch/100520750"
-          style="position: absolute; left: -9999px"
-          alt=""
-        />
-      </div>
-    </noscript>
-  </body>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/100520750" style="position: absolute; left: -9999px" alt="" />
+    </div>
+  </noscript>
+</body>
+
 </html>
