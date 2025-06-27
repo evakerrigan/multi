@@ -253,26 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
       // Синхронизируем значения перед стартом
       syncMobileAttemptsInput();
 
-      // Проверяем валидность данных перед стартом
-      const selectedNumbers = selectedNumbersState.getSelectedNumbers();
-      const attemptsCount = counterState.getAttemptsCount();
+      // Запускаем игру (все проверки валидности внутри startGame)
+      const gameStarted = startGame();
 
-      // Если не выбраны числа или не установлено количество попыток - не стартуем игру
-      if (selectedNumbers.length === 0) {
-        alert('Выберите хотя бы одно число для изучения');
-        return;
+      // Переключаемся на экран игры только если игра успешно началась
+      if (gameStarted) {
+        switchToMobileGameScreen();
       }
-
-      if (attemptsCount <= 0) {
-        alert('Введите количество успешных попыток (больше 0)');
-        return;
-      }
-
-      // Переключаемся на экран игры
-      switchToMobileGameScreen();
-
-      // Запускаем игру
-      startGame();
     });
   }
 

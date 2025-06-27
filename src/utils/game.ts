@@ -69,23 +69,24 @@ export function checkAnswer(): void {
   }
 }
 
-export function startGame(): void {
+export function startGame(): boolean {
   // Проверяем валидность данных перед стартом
   const selectedNumbers = selectedNumbersState.getSelectedNumbers();
   const attemptsCount = counterState.getAttemptsCount();
 
-  gameStartedState.setGameStartedState(true);
-
   // Если не выбраны числа или не установлено количество попыток - не стартуем игру
   if (selectedNumbers.length === 0) {
     messageBlock.textContent = 'Выберите хотя бы одно число для изучения';
-    return;
+    return false;
   }
 
   if (attemptsCount <= 0) {
     messageBlock.textContent = 'Введите количество успешных попыток (больше 0)';
-    return;
+    return false;
   }
+
+  // Только после всех проверок устанавливаем состояние игры как начатое
+  gameStartedState.setGameStartedState(true);
 
   // Логика начала игры
   const startButton = document.getElementById('start') as HTMLButtonElement;
@@ -118,4 +119,6 @@ export function startGame(): void {
   messageBlock.textContent = '';
   setFirstInputValue();
   counterState.resetCounts();
+
+  return true;
 }
