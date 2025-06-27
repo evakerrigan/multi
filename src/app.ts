@@ -83,6 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
     instructionButton.addEventListener('click', openInstructionModal);
   }
 
+  const restartButton = document.getElementById('restartButton');
+  if (restartButton) {
+    restartButton.addEventListener('click', closeModalSuccess);
+  }
+
   document.addEventListener('click', (event) => {
     if (event.target instanceof Element) {
       const closeBtn = event.target.closest('.close-instruction');

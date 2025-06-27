@@ -46,10 +46,14 @@
   cursor: pointer;
 }
 
-.instruction-button {
+.header-instruction {
   position: fixed;
   top: 20px;
   right: 20px;
+  display: flex;
+}
+
+.settings-button {
   background-color: #f8f8f8;
   border-radius: 2px;
   width: 40px;
@@ -60,9 +64,10 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   border: 1px solid #aaa;
+  margin-left: 10px;
 }
 
-.instruction-button:hover {
+.settings-button:hover {
   background-color: #e0e0e0;
 }
 
@@ -84,6 +89,34 @@ ul.modal-instruction-list {
   list-style-type: decimal;
   margin: 0;
   padding: 0 20px;
+}
+
+.modal-about {
+  text-align: right;
+  padding: 20px 0 10px 0;
+}
+
+.modal-about a {
+  color: #6cade5;
+}
+
+.modal-about a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 640px) {
+  .header-instruction {
+    top: 10px;
+    right: 10px;
+  }
+  .settings-button {
+    color: #6cade5;
+    background-color: rgba(108, 173, 229, 0.367);
+    border: none;
+  }
+  .settings-button:hover {
+    background-color: rgba(108, 173, 229, 0.7);
+  }
 }
 
 @media screen and (max-width: 600px) {
