@@ -25,9 +25,30 @@ export const attemptsInput = document.getElementById(
 ) as HTMLInputElement;
 
 export function updateCounters(): void {
+  // Обновляем мобильные элементы
   attemptsCountTemp.textContent = counterState.getCount().toString();
   attemptsCountYes.textContent = counterState.getGoodCount().toString();
   attemptsCountNot.textContent = counterState.getBadCount().toString();
+
+  // Обновляем десктопные элементы
+  const desktopAttemptsCountTemp = document.getElementById(
+    'desktop-attempts-count-temp'
+  );
+  const desktopAttemptsCountYes = document.getElementById(
+    'desktop-attempts-count-yes'
+  );
+  const desktopAttemptsCountNot = document.getElementById(
+    'desktop-attempts-count-not'
+  );
+
+  if (desktopAttemptsCountTemp)
+    desktopAttemptsCountTemp.textContent = counterState.getCount().toString();
+  if (desktopAttemptsCountYes)
+    desktopAttemptsCountYes.textContent = counterState
+      .getGoodCount()
+      .toString();
+  if (desktopAttemptsCountNot)
+    desktopAttemptsCountNot.textContent = counterState.getBadCount().toString();
 }
 
 export function resetInputs(): void {

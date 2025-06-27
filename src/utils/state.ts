@@ -24,9 +24,22 @@ const state = new Proxy<State>(
 );
 
 function updateUI() {
+  // Мобильные элементы статистики
   const attemptsElement = document.getElementById('attempts-count-temp');
   const yesElement = document.getElementById('attempts-count-yes');
   const notElement = document.getElementById('attempts-count-not');
+
+  // Десктопные элементы статистики
+  const desktopAttemptsElement = document.getElementById(
+    'desktop-attempts-count-temp'
+  );
+  const desktopYesElement = document.getElementById(
+    'desktop-attempts-count-yes'
+  );
+  const desktopNotElement = document.getElementById(
+    'desktop-attempts-count-not'
+  );
+
   const selectedNumbersList = document.getElementById('selected-numbers-list');
   const attemptsInput = document.getElementById(
     'attempts-input'
@@ -35,9 +48,18 @@ function updateUI() {
     'mobile-attempts-input'
   ) as HTMLInputElement;
 
+  // Обновляем мобильные элементы
   if (attemptsElement) attemptsElement.textContent = state.count.toString();
   if (yesElement) yesElement.textContent = state.goodCount.toString();
   if (notElement) notElement.textContent = state.badCount.toString();
+
+  // Обновляем десктопные элементы
+  if (desktopAttemptsElement)
+    desktopAttemptsElement.textContent = state.count.toString();
+  if (desktopYesElement)
+    desktopYesElement.textContent = state.goodCount.toString();
+  if (desktopNotElement)
+    desktopNotElement.textContent = state.badCount.toString();
 
   // Синхронизируем поле ввода количества попыток с состоянием (десктоп)
   if (attemptsInput) {
