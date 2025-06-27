@@ -14,7 +14,7 @@ const state = new Proxy<State>(
     badCount: 0,
     goodCount: 0,
     selectedNumbers: [],
-    attemptsCount: 0
+    attemptsCount: 20
   },
   {
     set(target, property, value) {
