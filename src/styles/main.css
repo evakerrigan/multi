@@ -101,6 +101,38 @@ input[type='number']::-webkit-outer-spin-button {
   padding: 10px 20px;
 }
 
+/* Новые стили для вертикального расположения статистики */
+.mobile-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.mobile-stat-label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #6cade5;
+}
+
+.mobile-stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mobile-stat-value .attempts-count.temp {
+  color: #6cade5;
+}
+
+.mobile-stat-value .attempts-count.yes {
+  color: #4caf50;
+}
+
+.mobile-stat-value .attempts-count.not {
+  color: #f44336;
+}
+
 /* Мобильный экран настройки */
 .mobile-setup-screen {
   display: none;
