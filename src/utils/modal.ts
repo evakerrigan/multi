@@ -1,5 +1,10 @@
 import {getRandomGifNumber} from './getRandomGif';
-import {counterState, gameStartedState, selectedNumbersState} from './state';
+import {
+  counterState,
+  gameStartedState,
+  selectedNumbersState,
+  updateInstructionTextState
+} from './state';
 import {resetInputs, removeListItemSelectedClasses, updateCounters} from './ui';
 
 export function openModal(): void {
@@ -60,6 +65,9 @@ export function closeModalSuccess(): void {
       mobileSetupScreen.style.display = 'flex';
       mainGameScreen.classList.remove('mobile-active');
     }
+
+    // Обновляем UI для синхронизации всех элементов с состоянием
+    updateInstructionTextState();
   }
 }
 

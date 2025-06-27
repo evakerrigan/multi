@@ -56,24 +56,6 @@ export function resetInputs(): void {
   secondInput.value = '';
   answerInput.value = '';
   messageBlock.textContent = '';
-
-  // Сброс десктопного инпута попыток
-  const attemptsInput = document.getElementById(
-    'attempts-input'
-  ) as HTMLInputElement;
-  if (attemptsInput) {
-    attemptsInput.value = '0';
-  }
-
-  // Сброс мобильного инпута попыток
-  const mobileAttemptsInput = document.getElementById(
-    'mobile-attempts-input'
-  ) as HTMLInputElement;
-  if (mobileAttemptsInput) {
-    mobileAttemptsInput.value = '0';
-  }
-
-  counterState.setAttemptsCount(0);
 }
 
 export function removeListItemSelectedClasses(): void {

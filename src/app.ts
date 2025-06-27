@@ -19,6 +19,40 @@ import {updateInstructionTextState} from './utils/state';
 export function handleListClick(event: MouseEvent): void {
   const target = event.target as HTMLElement;
 
+  // Проверяем, является ли кликнутый элемент кнопкой "Все"
+  if (target.innerText === 'Все') {
+    // Очищаем текущий выбор
+    selectedNumbersState.clearSelectedNumbers();
+
+    // Убираем выделение со всех элементов списка
+    document
+      .querySelectorAll('.footer-list li, .mobile-footer-list li')
+      .forEach((li) => {
+        li.classList.remove('list-item-selected');
+      });
+
+    // Добавляем все числа от 0 до 10
+    for (let i = 0; i <= 10; i++) {
+      selectedNumbersState.addSelectedNumber(i);
+    }
+
+    // Добавляем выделение ко всем элементам списка (кроме "Все")
+    document
+      .querySelectorAll('.footer-list li, .mobile-footer-list li')
+      .forEach((li) => {
+        if (li.textContent !== 'Все') {
+          li.classList.add('list-item-selected');
+        }
+      });
+
+    // Устанавливаем количество попыток в 50
+    counterState.setAttemptsCount(50);
+
+    // Генерируем новый пример после выбора числа
+    setFirstInputValue();
+    return;
+  }
+
   const value = parseInt(target.innerText || '0');
 
   if (target.classList.contains('list-item-selected')) {
@@ -77,6 +111,23 @@ function updateReadonlyState(): void {
 
 // Инициализация приложения
 document.addEventListener('DOMContentLoaded', () => {
+  // Инициализируем значения инпутов из состояния
+  const initialAttemptsInput = document.getElementById(
+    'attempts-input'
+  ) as HTMLInputElement;
+  const initialMobileAttemptsInput = document.getElementById(
+    'mobile-attempts-input'
+  ) as HTMLInputElement;
+
+  if (initialAttemptsInput) {
+    initialAttemptsInput.value = counterState.getAttemptsCount().toString();
+  }
+  if (initialMobileAttemptsInput) {
+    initialMobileAttemptsInput.value = counterState
+      .getAttemptsCount()
+      .toString();
+  }
+
   // Настройка модальных окон
   const instructionButton = document.getElementById('instructionButton');
   if (instructionButton) {
@@ -231,6 +282,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Инициализируем правильное мигание при загрузке страницы
+  updateInstructionTextState();
+
+  // Принудительно обновляем UI для синхронизации всех элементов с состоянием
   updateInstructionTextState();
 
   // --- Обработка мобильной экранной клавиатуры ---
