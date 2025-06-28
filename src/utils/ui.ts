@@ -67,12 +67,21 @@ export function removeListItemSelectedClasses(): void {
   });
 }
 
+const successCheckmark = document.getElementById(
+  'success-checkmark'
+) as HTMLElement;
+const failureCheckmark = document.getElementById(
+  'failure-checkmark'
+) as HTMLElement;
+
 export function showSuccessEffect(): void {
-  document.body.style.backgroundColor = 'green';
-  setTimeout(() => (document.body.style.backgroundColor = ''), 1000);
+  failureCheckmark.style.display = 'none';
+  successCheckmark.style.display = 'flex';
 }
 
 export function showFailureEffect(): void {
+  successCheckmark.style.display = 'none';
+  failureCheckmark.style.display = 'flex';
   document.body.style.backgroundColor = 'red';
   setTimeout(() => (document.body.style.backgroundColor = ''), 1000);
 }
