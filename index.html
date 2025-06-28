@@ -1,76 +1,64 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Таблица умножения онлайн - тренировка памяти | MultiTable</title>
-    <meta
-      name="description"
-      content="Онлайн игра для изучения таблицы умножения. Повторяй примеры чтобы выучить."
-    />
-    <meta
-      property="og:title"
-      content="Таблица умножения онлайн - тренировка памяти | MultiTable"
-    />
-    <meta
-      property="og:description"
-      content="Играйте онлайн и учите таблицу умножения. Повторяйте примеры для улучшения памяти."
-    />
 
-    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /> -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <title>Таблица умножения онлайн - тренировка памяти | MultiTable</title>
+  <meta name="description" content="Онлайн игра для изучения таблицы умножения. Повторяй примеры чтобы выучить." />
+  <meta property="og:title" content="Таблица умножения онлайн - тренировка памяти | MultiTable" />
+  <meta property="og:description"
+    content="Играйте онлайн и учите таблицу умножения. Повторяйте примеры для улучшения памяти." />
 
-      gtag('config', 'G-M5P6W57SP1');
-    </script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
+  <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /> -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5P6W57SP1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M5P6W57SP1');
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
         }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        'script',
-        'https://mc.yandex.ru/metrika/tag.js',
-        'ym'
-      );
+      }
+      (k = e.createElement(t)),
+        (a = e.getElementsByTagName(t)[0]),
+        (k.async = 1),
+        (k.src = r),
+        a.parentNode.insertBefore(k, a);
+    })(
+      window,
+      document,
+      'script',
+      'https://mc.yandex.ru/metrika/tag.js',
+      'ym'
+    );
 
-      ym(100520750, 'init', {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true
-      });
-    </script>
-    <!-- /Yandex.Metrika counter -->
-    <script type="application/ld+json">
+    ym(100520750, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <!-- /Yandex.Metrika counter -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Game",
@@ -82,21 +70,132 @@
         }
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-C5W4nSqO.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CIYeYJd-.css">
-  </head>
+  <script type="module" crossorigin src="/assets/index-BO8RxWbP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CdjorBbV.css">
+</head>
 
-  <body>
-    <div id="app" class="app">
-      <!-- Мобильный экран настройки (виден только на экранах < 640px) -->
-      <div id="mobile-setup-screen" class="mobile-setup-screen">
-        <div class="mobile-setup-container">
-          <h2>Настройка игры</h2>
-          <div class="mobile-setup-section">
-            <p class="mobile-instruction-text instruction-text-blinking">
-              Выберите число, умножение на которое надо выучить
+<body>
+  <div id="app" class="app">
+    <!-- Мобильный экран настройки (виден только на экранах < 640px) -->
+    <div id="mobile-setup-screen" class="mobile-setup-screen">
+      <div class="mobile-setup-container">
+        <h2>Настройка игры</h2>
+        <div class="mobile-setup-section">
+          <p class="mobile-instruction-text instruction-text-blinking">
+            Выберите одно или несколько чисел, умножение на которые надо
+            выучить
+          </p>
+          <ul class="mobile-footer-list">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>Все</li>
+          </ul>
+        </div>
+        <div class="mobile-setup-section">
+          <div class="mobile-attempts-container">
+            <p class="mobile-attempts-text">
+              Введите количество успешных попыток:
             </p>
-            <ul class="mobile-footer-list">
+            <input class="mobile-footer-input" type="number" id="mobile-attempts-input" min="1" max="999" step="1"
+              pattern="[0-9]*" />
+          </div>
+        </div>
+        <div class="mobile-setup-section">
+          <button id="mobile-start" class="mobile-button-start">Старт</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основной экран (скрыт на мобильных устройствах во время настройки) -->
+    <div id="main-game-screen" class="main-game-screen">
+      <!-- Мобильный блок статистики (виден только на экранах < 640px) -->
+      <div id="mobile-stats" class="mobile-stats">
+        <div class="mobile-stats-container">
+          <div class="mobile-stat-item">
+            <div class="mobile-stat-label">Всего:</div>
+            <div class="mobile-stat-value">
+              <span id="attempts-count-temp" class="attempts-count temp">0</span>
+            </div>
+          </div>
+          <div class="mobile-stat-item">
+            <div class="mobile-stat-label">Успешно:</div>
+            <div class="mobile-stat-value">
+              <span id="attempts-count-yes" class="attempts-count yes">0</span>
+            </div>
+          </div>
+          <div class="mobile-stat-item">
+            <div class="mobile-stat-label">Неудачно:</div>
+            <div class="mobile-stat-value">
+              <span id="attempts-count-not" class="attempts-count not">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="main-container">
+          <div class="multi-container">
+            <form id="answer-form" style="display: contents">
+              <input type="number" id="firstNumber" class="multi-input" disabled />
+              <span> x </span>
+              <input type="number" id="secondNumber" class="multi-input" disabled />
+              <button type="button" id="done" onclick="checkAnswer()">
+                =
+              </button>
+              <input type="number" id="answer" class="multi-input" inputmode="numeric" min="0" max="999" step="1"
+                pattern="[0-9]*" disabled  />
+            </form>
+          </div>          
+          <div class="answer-container">
+            <div id="success-checkmark" class="answer-checkmark" style="display: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+                <g fill="#4caf50" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(5.12,5.12)">
+                    <path
+                      d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div id="failure-checkmark" class="answer-checkmark" style="display: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+                  <g fill="#ff0000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(10.66667,10.66667)">
+                      <path
+                        d="M4.99023,3.99023c-0.40692,0.00011 -0.77321,0.24676 -0.92633,0.62377c-0.15312,0.37701 -0.06255,0.80921 0.22907,1.09303l6.29297,6.29297l-6.29297,6.29297c-0.26124,0.25082 -0.36647,0.62327 -0.27511,0.97371c0.09136,0.35044 0.36503,0.62411 0.71547,0.71547c0.35044,0.09136 0.72289,-0.01388 0.97371,-0.27511l6.29297,-6.29297l6.29297,6.29297c0.25082,0.26124 0.62327,0.36648 0.97371,0.27512c0.35044,-0.09136 0.62411,-0.36503 0.71547,-0.71547c0.09136,-0.35044 -0.01388,-0.72289 -0.27512,-0.97371l-6.29297,-6.29297l6.29297,-6.29297c0.29576,-0.28749 0.38469,-0.72707 0.22393,-1.10691c-0.16075,-0.37985 -0.53821,-0.62204 -0.9505,-0.60988c-0.2598,0.00774 -0.50638,0.11632 -0.6875,0.30273l-6.29297,6.29297l-6.29297,-6.29297c-0.18827,-0.19353 -0.4468,-0.30272 -0.7168,-0.30273z">
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+            </div>
+          </div>
+          <p id="message" class="message"></p>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <div class="footer-container">
+          <div class="footer-content first-child desktop-only">
+            <p id="instruction-text" class="instruction-text-blinking">
+              Выберите одно или несколько чисел, умножение на которые надо
+              выучить
+            </p>
+            <ul class="footer-list">
               <li>0</li>
               <li>1</li>
               <li>2</li>
@@ -111,265 +210,210 @@
               <li>Все</li>
             </ul>
           </div>
-          <div class="mobile-setup-section">
-            <div class="mobile-attempts-container">
-              <p class="mobile-attempts-text">
-                Введите количество успешных попыток:
-              </p>
-              <input
-                class="mobile-footer-input"
-                type="number"
-                id="mobile-attempts-input"
-                min="1"
-                max="999"
-                step="1"
-                pattern="[0-9]*"
-              />
+          <div class="footer-content middle-child desktop-only">
+            <div class="footer-content">
+              <div class="attempts-container">
+                <p class="" id="attempts-text">
+                  Введите количество<br />
+                  успешных попыток:
+                </p>
+                <input class="footer-input" type="number" id="attempts-input" min="1" max="999" step="1"
+                  pattern="[0-9]*" />
+              </div>
+            </div>
+            <div class="footer-content">
+              <button id="start" class="button-start">Старт</button>
             </div>
           </div>
-          <div class="mobile-setup-section">
-            <button id="mobile-start" class="mobile-button-start">Старт</button>
+          <div class="footer-content last-child">
+            <div>
+              Всего:
+              <span id="desktop-attempts-count-temp" class="attempts-count temp">
+                0</span>
+            </div>
+            <div>
+              Успешно:
+              <span id="desktop-attempts-count-yes" class="attempts-count yes">
+                0</span>
+            </div>
+            <div>
+              Неудачно:
+              <span id="desktop-attempts-count-not" class="attempts-count not">
+                0</span>
+            </div>
+          </div>
+          <!-- Экранная клавиатура для мобильных устройств -->
+          <div id="mobile-keyboard" class="mobile-keyboard">
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="1">1</button>
+              <button type="button" class="mobile-key" data-key="2">2</button>
+              <button type="button" class="mobile-key" data-key="3">3</button>
+            </div>
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="4">4</button>
+              <button type="button" class="mobile-key" data-key="5">5</button>
+              <button type="button" class="mobile-key" data-key="6">6</button>
+            </div>
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="7">7</button>
+              <button type="button" class="mobile-key" data-key="8">8</button>
+              <button type="button" class="mobile-key" data-key="9">9</button>
+            </div>
+            <div class="mobile-keyboard-row">
+              <button type="button" class="mobile-key" data-key="del">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                  class="keyboard-icon">
+                  <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(10.66667,10.66667)">
+                      <path
+                        d="M4.99023,3.99023c-0.40692,0.00011 -0.77321,0.24676 -0.92633,0.62377c-0.15312,0.37701 -0.06255,0.80921 0.22907,1.09303l6.29297,6.29297l-6.29297,6.29297c-0.26124,0.25082 -0.36647,0.62327 -0.27511,0.97371c0.09136,0.35044 0.36503,0.62411 0.71547,0.71547c0.35044,0.09136 0.72289,-0.01388 0.97371,-0.27511l6.29297,-6.29297l6.29297,6.29297c0.25082,0.26124 0.62327,0.36648 0.97371,0.27512c0.35044,-0.09136 0.62411,-0.36503 0.71547,-0.71547c0.09136,-0.35044 -0.01388,-0.72289 -0.27512,-0.97371l-6.29297,-6.29297l6.29297,-6.29297c0.29576,-0.28749 0.38469,-0.72707 0.22393,-1.10691c-0.16075,-0.37985 -0.53821,-0.62204 -0.9505,-0.60988c-0.2598,0.00774 -0.50638,0.11632 -0.6875,0.30273l-6.29297,6.29297l-6.29297,-6.29297c-0.18827,-0.19353 -0.4468,-0.30272 -0.7168,-0.30273z">
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+              <button type="button" class="mobile-key" data-key="0">0</button>
+              <button type="button" class="mobile-key" data-key="ok">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                  class="keyboard-icon">
+                  <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                      <path
+                        d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z">
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Модальное окно успешного выполнения -->
 
-      <!-- Основной экран (скрыт на мобильных устройствах во время настройки) -->
-      <div id="main-game-screen" class="main-game-screen">
-        <!-- Мобильный блок статистики (виден только на экранах < 640px) -->
-        <div id="mobile-stats" class="mobile-stats">
-          <div class="mobile-stats-container">
-            <div class="mobile-stat-item">
-              <div class="mobile-stat-label">Всего:</div>
-              <div class="mobile-stat-value">
-                <span id="attempts-count-temp" class="attempts-count temp"
-                  >0</span
-                >
-              </div>
-            </div>
-            <div class="mobile-stat-item">
-              <div class="mobile-stat-label">Успешно:</div>
-              <div class="mobile-stat-value">
-                <span id="attempts-count-yes" class="attempts-count yes"
-                  >0</span
-                >
-              </div>
-            </div>
-            <div class="mobile-stat-item">
-              <div class="mobile-stat-label">Неудачно:</div>
-              <div class="mobile-stat-value">
-                <span id="attempts-count-not" class="attempts-count not"
-                  >0</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="main">
-          <div class="main-container">
-            <div class="multi-container">
-              <form id="answer-form" style="display: contents">
-                <input
-                  type="number"
-                  id="firstNumber"
-                  class="multi-input"
-                  disabled
-                />
-                <span> x </span>
-                <input
-                  type="number"
-                  id="secondNumber"
-                  class="multi-input"
-                  disabled
-                />
-                <button type="button" id="done" onclick="checkAnswer()">
-                  =
-                </button>
-                <input
-                  type="number"
-                  id="answer"
-                  class="multi-input"
-                  inputmode="numeric"
-                  min="0"
-                  max="999"
-                  step="1"
-                  pattern="[0-9]*"
-                />
-              </form>
-            </div>
-            <p id="message" class="message"></p>
-          </div>
-        </div>
-        <footer class="page-footer">
-          <div class="footer-container">
-            <div class="footer-content first-child desktop-only">
-              <p id="instruction-text" class="instruction-text-blinking">
-                Выберите число, умножение на которое надо выучить
-              </p>
-              <ul class="footer-list">
-                <li>0</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>Все</li>
-              </ul>
-            </div>
-            <div class="footer-content middle-child desktop-only">
-              <div class="footer-content">
-                <div class="attempts-container">
-                  <p class="" id="attempts-text">
-                    Введите количество<br />
-                    успешных попыток:
-                  </p>
-                  <input
-                    class="footer-input"
-                    type="number"
-                    id="attempts-input"
-                    min="1"
-                    max="999"
-                    step="1"
-                    pattern="[0-9]*"
-                  />
-                </div>
-              </div>
-              <div class="footer-content">
-                <button id="start" class="button-start">Старт</button>
-              </div>
-            </div>
-            <div class="footer-content last-child">
-              <div>
-                Всего:
-                <span
-                  id="desktop-attempts-count-temp"
-                  class="attempts-count temp"
-                >
-                  0</span
-                >
-              </div>
-              <div>
-                Успешно:
-                <span
-                  id="desktop-attempts-count-yes"
-                  class="attempts-count yes"
-                >
-                  0</span
-                >
-              </div>
-              <div>
-                Неудачно:
-                <span
-                  id="desktop-attempts-count-not"
-                  class="attempts-count not"
-                >
-                  0</span
-                >
-              </div>
-            </div>
-            <!-- Экранная клавиатура для мобильных устройств -->
-            <div id="mobile-keyboard" class="mobile-keyboard">
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="1">1</button>
-                <button type="button" class="mobile-key" data-key="2">2</button>
-                <button type="button" class="mobile-key" data-key="3">3</button>
-              </div>
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="4">4</button>
-                <button type="button" class="mobile-key" data-key="5">5</button>
-                <button type="button" class="mobile-key" data-key="6">6</button>
-              </div>
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="7">7</button>
-                <button type="button" class="mobile-key" data-key="8">8</button>
-                <button type="button" class="mobile-key" data-key="9">9</button>
-              </div>
-              <div class="mobile-keyboard-row">
-                <button type="button" class="mobile-key" data-key="del">
-                  ⌫
-                </button>
-                <button type="button" class="mobile-key" data-key="0">0</button>
-                <button type="button" class="mobile-key" data-key="ok">
-                  =
-                </button>
-              </div>
-            </div>
-          </div>
-        </footer>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalSuccess" class="close-instruction">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+          class="modal-icon">
+          <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+            font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <g transform="scale(10.66667,10.66667)">
+              <path
+                d="M4.99023,3.99023c-0.40692,0.00011 -0.77321,0.24676 -0.92633,0.62377c-0.15312,0.37701 -0.06255,0.80921 0.22907,1.09303l6.29297,6.29297l-6.29297,6.29297c-0.26124,0.25082 -0.36647,0.62327 -0.27511,0.97371c0.09136,0.35044 0.36503,0.62411 0.71547,0.71547c0.35044,0.09136 0.72289,-0.01388 0.97371,-0.27511l6.29297,-6.29297l6.29297,6.29297c0.25082,0.26124 0.62327,0.36648 0.97371,0.27512c0.35044,-0.09136 0.62411,-0.36503 0.71547,-0.71547c0.09136,-0.35044 -0.01388,-0.72289 -0.27512,-0.97371l-6.29297,-6.29297l6.29297,-6.29297c0.29576,-0.28749 0.38469,-0.72707 0.22393,-1.10691c-0.16075,-0.37985 -0.53821,-0.62204 -0.9505,-0.60988c-0.2598,0.00774 -0.50638,0.11632 -0.6875,0.30273l-6.29297,6.29297l-6.29297,-6.29297c-0.18827,-0.19353 -0.4468,-0.30272 -0.7168,-0.30273z">
+              </path>
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h2>Поздравляем!</h2>
+      <p>Отличная работа! Вы успешно справились с заданием!</p>
+      <div class="modal-image-success-container">
+        <img alt="gif" class="modal-image-success" />
       </div>
     </div>
-    <!-- Модальное окно успешного выполнения -->
+  </div>
 
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span id="closeModalSuccess" class="close-instruction">&times;</span>
-        <h2>Поздравляем!</h2>
-        <p>Отличная работа! Вы успешно справились с заданием!</p>
-        <div class="modal-image-success-container">
-          <img alt="gif" class="modal-image-success" />
-        </div>
+  <!-- Модальное окно с инструкцией -->
+  <div class="header-instruction">
+    <div id="instructionButton" class="settings-button">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256"
+        class="settings-icon">
+        <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+          stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+          font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+          <g transform="scale(5.12,5.12)">
+            <path
+              d="M7,2v46h36v-33.40625l-0.28125,-0.3125l-12,-12l-0.3125,-0.28125zM9,4h20v12h12v30h-32zM31,5.4375l8.5625,8.5625h-8.5625zM15,22v2h20v-2zM15,28v2h16v-2zM15,34v2h20v-2z">
+            </path>
+          </g>
+        </g>
+        </g>
+      </svg>
+    </div>
+    <div id="restartButton" class="settings-button">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256"
+        class="settings-icon">
+        <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+          stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+          font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+          <g transform="scale(5.12,5.12)">
+            <path
+              d="M25,5c-11.03516,0 -20,8.96484 -20,20c-0.00391,0.35938 0.18359,0.69531 0.49609,0.87891c0.3125,0.17969 0.69531,0.17969 1.00781,0c0.3125,-0.18359 0.5,-0.51953 0.49609,-0.87891c0,-9.95312 8.04688,-18 18,-18c6.24609,0 11.72656,3.17969 14.95703,8h-6.95703c-0.35937,-0.00391 -0.69531,0.18359 -0.87891,0.49609c-0.17969,0.3125 -0.17969,0.69531 0,1.00781c0.18359,0.3125 0.51953,0.5 0.87891,0.49609h10v-10c0.00391,-0.26953 -0.10156,-0.53125 -0.29297,-0.72266c-0.19141,-0.19141 -0.45312,-0.29687 -0.72266,-0.29297c-0.55078,0.01172 -0.99219,0.46484 -0.98437,1.01563v6.01172c-3.65234,-4.86328 -9.46094,-8.01172 -16,-8.01172zM43.98438,23.98438c-0.55078,0.01172 -0.99219,0.46484 -0.98437,1.01563c0,9.95313 -8.04687,18 -18,18c-6.24609,0 -11.73047,-3.17969 -14.95703,-8h6.95703c0.35938,0.00781 0.69531,-0.18359 0.87891,-0.49219c0.17969,-0.3125 0.17969,-0.69922 0,-1.01172c-0.18359,-0.30859 -0.51953,-0.5 -0.87891,-0.49609h-8.55469c-0.12891,-0.02344 -0.25781,-0.02344 -0.38672,0h-1.05859v10c-0.00391,0.35938 0.18359,0.69531 0.49609,0.87891c0.3125,0.17969 0.69531,0.17969 1.00781,0c0.3125,-0.18359 0.5,-0.51953 0.49609,-0.87891v-6.01562c3.64844,4.86328 9.46094,8.01563 16,8.01563c11.03516,0 20,-8.96484 20,-20c0.00391,-0.26953 -0.10156,-0.53125 -0.29297,-0.72266c-0.19141,-0.19141 -0.45312,-0.29687 -0.72266,-0.29297z">
+            </path>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div id="instructionModal" class="modal">
+    <div class="modal-content">
+      <span class="close-instruction">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+          class="modal-icon">
+          <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+            font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <g transform="scale(10.66667,10.66667)">
+              <path
+                d="M4.99023,3.99023c-0.40692,0.00011 -0.77321,0.24676 -0.92633,0.62377c-0.15312,0.37701 -0.06255,0.80921 0.22907,1.09303l6.29297,6.29297l-6.29297,6.29297c-0.26124,0.25082 -0.36647,0.62327 -0.27511,0.97371c0.09136,0.35044 0.36503,0.62411 0.71547,0.71547c0.35044,0.09136 0.72289,-0.01388 0.97371,-0.27511l6.29297,-6.29297l6.29297,6.29297c0.25082,0.26124 0.62327,0.36648 0.97371,0.27512c0.35044,-0.09136 0.62411,-0.36503 0.71547,-0.71547c0.09136,-0.35044 -0.01388,-0.72289 -0.27512,-0.97371l-6.29297,-6.29297l6.29297,-6.29297c0.29576,-0.28749 0.38469,-0.72707 0.22393,-1.10691c-0.16075,-0.37985 -0.53821,-0.62204 -0.9505,-0.60988c-0.2598,0.00774 -0.50638,0.11632 -0.6875,0.30273l-6.29297,6.29297l-6.29297,-6.29297c-0.18827,-0.19353 -0.4468,-0.30272 -0.7168,-0.30273z">
+              </path>
+            </g>
+          </g>
+        </svg>
+      </span>
+      <p>
+        Приложение для заучивания таблицы умножения методом многократного
+        повторении одних и тех же примеров
+      </p>
+      <ul class="modal-instruction-description-list">
+        <li>Первый раз вы посчитаете ответ.</li>
+        <li>Второй раз - снова посчитаете.</li>
+        <li>
+          На последующие повторения этого же примера вы вспомните: "Я же 5
+          минут назад уже отвечал на этот пример, там было такое то число."
+        </li>
+      </ul>
+      <p>Инструкция:</p>
+      <ul class="modal-instruction-list">
+        <li>
+          <p>
+            Выберите число (или числа), умножение на которое надо выучить.
+          </p>
+          <img src="/images/1.png" alt="step1" class="modal-image" />
+        </li>
+        <li>
+          <p>Введите количество правильных попыток (рекомендую 100).</p>
+          <img src="/images/2.png" alt="step2" class="modal-image" />
+        </li>
+        <li>
+          <p>Нажмите кнопку "Старт".</p>
+          <img src="/images/3.png" alt="step3" class="modal-image" />
+        </li>
+      </ul>
+      <div class="modal-about">
+        tg для связи:
+        <a href="https://t.me/EvaKerrigan" target="_blank">EvaKerrigan</a>
       </div>
     </div>
-
-    <!-- Модальное окно с инструкцией -->
-    <div class="header-instruction">
-      <div id="instructionButton" class="settings-button">i</div>
-      <div id="restartButton" class="settings-button">r</div>
-    </div>
-
-    <div id="instructionModal" class="modal">
-      <div class="modal-content">
-        <span class="close-instruction">&times;</span>
-        <p>
-          Приложение для заучивания таблицы умножения методом многократного
-          повторении одних и тех же примеров
-        </p>
-        <ul class="modal-instruction-description-list">
-          <li>Первый раз вы посчитаете ответ.</li>
-          <li>Второй раз - снова посчитаете.</li>
-          <li>
-            На последующие повторения этого же примера вы вспомните: "Я же 5
-            минут назад уже отвечал на этот пример, там было такое то число."
-          </li>
-        </ul>
-        <p>Инструкция:</p>
-        <ul class="modal-instruction-list">
-          <li>
-            <p>
-              Выберите число (или числа), умножение на которое надо выучить.
-            </p>
-            <img src="/images/1.png" alt="step1" class="modal-image" />
-          </li>
-          <li>
-            <p>Введите количество правильных попыток (рекомендую 100).</p>
-            <img src="/images/2.png" alt="step2" class="modal-image" />
-          </li>
-          <li>
-            <p>Нажмите кнопку "Старт".</p>
-            <img src="/images/3.png" alt="step3" class="modal-image" />
-          </li>
-        </ul>
-        <div class="modal-about">
-          tg для связи:
-          <a href="https://t.me/EvaKerrigan" target="_blank">EvaKerrigan</a>
-        </div>
-      </div>
-    </div>
+  </div>
 
 
-    <noscript>
-      <div>
-        <img
-          src="https://mc.yandex.ru/watch/100520750"
-          style="position: absolute; left: -9999px"
-          alt=""
-        />
-      </div>
-    </noscript>
-  </body>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/100520750" style="position: absolute; left: -9999px" alt="" />
+    </div>
+  </noscript>
+</body>
+
 </html>
