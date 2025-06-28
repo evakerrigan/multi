@@ -58,6 +58,16 @@ function updateUI() {
     'mobile-attempts-input'
   ) as HTMLInputElement;
 
+  // Управляем блокировкой инпута ответа //TODO: это надо отсюда куда то вынести, это не должно быть в файле состояний
+  const answerInput = document.getElementById('answer') as HTMLInputElement;
+  if (answerInput) {
+    if (state.isGameStarted) {
+      answerInput.disabled = false;
+    } else {
+      answerInput.disabled = true;
+    }
+  }
+
   // Обновляем состояние заблокированных элементов списка
   const footerContainer = document.querySelector('.footer-container');
   if (footerContainer) {
