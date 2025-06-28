@@ -57,6 +57,16 @@ export function closeModalSuccess(): void {
     if (mobileStartButton) mobileStartButton.removeAttribute('disabled');
     if (mobileAttemptsInput) mobileAttemptsInput.removeAttribute('disabled');
 
+    // Скрываем галочки и крестики под ответом
+    const successCheckmark = document.getElementById(
+      'success-checkmark'
+    ) as HTMLElement;
+    const failureCheckmark = document.getElementById(
+      'failure-checkmark'
+    ) as HTMLElement;
+    failureCheckmark.style.display = 'none';
+    successCheckmark.style.display = 'none';
+
     // Возврат к экрану настройки на мобильных устройствах
     const mobileSetupScreen = document.getElementById('mobile-setup-screen');
     const mainGameScreen = document.getElementById('main-game-screen');
