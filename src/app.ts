@@ -139,6 +139,30 @@ function updateReadonlyState(): void {
   }
 }
 
+// Функция для обработки ресайза окна и переключения экранов
+function handleWindowResize(): void {
+  const mobileSetupScreen = document.getElementById('mobile-setup-screen');
+  const mainGameScreen = document.getElementById('main-game-screen');
+
+  if (mobileSetupScreen && mainGameScreen) {
+    if (window.innerWidth >= 640) {
+      // Если окно стало шире 640px, скрываем мобильный экран настройки
+      mobileSetupScreen.style.display = 'none';
+      mainGameScreen.classList.remove('mobile-active');
+    } else {
+      // Если окно стало уже 640px, показываем мобильный экран настройки
+      // только если игра не началась
+      if (!gameStartedState.getGameStartedState()) {
+        mobileSetupScreen.style.display = 'flex';
+        mainGameScreen.classList.remove('mobile-active');
+      }
+    }
+  }
+
+  // Обновляем состояние readonly для поля ответа
+  updateReadonlyState();
+}
+
 // Инициализация приложения
 document.addEventListener('DOMContentLoaded', () => {
   // Инициализируем значения инпутов из состояния
@@ -343,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateReadonlyState();
 
   // Добавляем слушатель изменения размера окна
-  window.addEventListener('resize', updateReadonlyState);
+  window.addEventListener('resize', handleWindowResize);
 
   if (mobileKeyboard && answerInputEl) {
     mobileKeyboard.addEventListener('click', (event) => {

@@ -68,6 +68,7 @@ export function closeModalSuccess(): void {
     successCheckmark.style.display = 'none';
 
     // Возврат к экрану настройки на мобильных устройствах
+    // Теперь эта логика обрабатывается в handleWindowResize
     const mobileSetupScreen = document.getElementById('mobile-setup-screen');
     const mainGameScreen = document.getElementById('main-game-screen');
 
