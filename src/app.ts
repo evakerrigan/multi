@@ -19,6 +19,27 @@ import {CustomWindow} from './types';
 // Импортируем функцию для обновления мигания
 import {updateInstructionTextState} from './utils/state';
 
+// Функция валидации поля ответа
+function validateAnswerInput(input: HTMLInputElement): void {
+  let value = input.value;
+
+  // Убираем все нецифровые символы (кроме цифр)
+  value = value.replace(/[^\d]/g, '');
+
+  // Убираем ведущие нули (но оставляем один ноль если это единственная цифра)
+  if (value.length > 1 && value.startsWith('0')) {
+    value = value.replace(/^0+/, '');
+  }
+
+  // Ограничиваем длину до 3 символов
+  if (value.length > 3) {
+    value = value.slice(0, 3);
+  }
+
+  // Обновляем значение поля
+  input.value = value;
+}
+
 // Обработчики событий
 export function handleListClick(event: MouseEvent): void {
   // Проверяем, не началась ли уже игра
@@ -184,6 +205,37 @@ document.addEventListener('DOMContentLoaded', () => {
         checkAnswer();
       }, 1);
     }
+
+    // Предотвращаем ввод нежелательных символов
+    const allowedKeys = [
+      'Backspace',
+      'Delete',
+      'Tab',
+      'Enter',
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowUp',
+      'ArrowDown'
+    ];
+    const isNumber = /^\d$/.test(event.key);
+
+    if (!allowedKeys.includes(event.key) && !isNumber) {
+      event.preventDefault();
+    }
+  });
+
+  // Добавляем валидацию для поля ответа
+  answerInput.addEventListener('input', () => {
+    validateAnswerInput(answerInput);
+  });
+
+  // Валидация при вставке текста
+  answerInput.addEventListener('paste', (event) => {
+    event.preventDefault();
+    const pastedText = event.clipboardData?.getData('text') || '';
+    const tempValue = answerInput.value + pastedText;
+    answerInput.value = tempValue;
+    validateAnswerInput(answerInput);
   });
 
   // Обработчик изменения поля количества попыток (десктоп)
@@ -280,8 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Инициализируем правильное мигание при загрузке страницы
   updateInstructionTextState();
 
-  // Принудительно обновляем UI для синхронизации всех элементов с состоянием
-  updateInstructionTextState();
+  // Инициализируем валидацию поля ответа
+  validateAnswerInput(answerInput);
 
   // --- Обработка мобильной экранной клавиатуры ---
   const mobileKeyboard = document.getElementById('mobile-keyboard');
@@ -304,10 +356,9 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (key === 'ok') {
         checkAnswer();
       } else if (/^\d$/.test(key)) {
-        // Ограничим длину ответа 3 символами (например, 100)
-        if (answerInputEl.value.length < 3) {
-          answerInputEl.value += key;
-        }
+        // Добавляем цифру и применяем валидацию
+        answerInputEl.value += key;
+        validateAnswerInput(answerInputEl);
       }
       // Фокусируем поле, чтобы курсор был виден
       answerInputEl.focus();
