@@ -46,6 +46,12 @@
   cursor: pointer;
 }
 
+.modal-icon {
+  width: 20px;
+  height: 20px;
+  color: #aaa;
+}
+
 .header-instruction {
   position: fixed;
   top: 20px;
@@ -96,11 +102,11 @@ ul.modal-instruction-list {
 
 .modal-about {
   text-align: right;
-  padding: 20px 0 10px 0;
+  padding: 40px 0 10px 0;
 }
 
 .modal-about a {
-  color: #6cade5;
+  color: #aaa;
 }
 
 .modal-about a:hover {
