@@ -14,7 +14,9 @@ export function generateRandomNumberAndSetToSecondInput(): void {
   const randomNumber = Math.floor(Math.random() * 8) + 2;
 
   answerInput.value = '';
-  secondInput.value = randomNumber.toString();
+  if (gameStartedState.getGameStartedState()) {
+    secondInput.value = randomNumber.toString();
+  }
 }
 
 export function chooseRandomNumberAndSetToFirstInput(array: number[]): string {
@@ -22,7 +24,9 @@ export function chooseRandomNumberAndSetToFirstInput(array: number[]): string {
 
   const randomIndex = Math.floor(Math.random() * array.length);
   const randomNumber = array[randomIndex];
-  firstInput.value = randomNumber.toString();
+  if (gameStartedState.getGameStartedState()) {
+    firstInput.value = randomNumber.toString();
+  }
   return randomNumber.toString();
 }
 
@@ -57,7 +61,7 @@ export function checkAnswer(): void {
     counterState.incrementBadCount();
     updateCounters();
     messageBlock.textContent = '';
-    showFailureEffect();    
+    showFailureEffect();
     setTimeout(() => {
       messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
     }, 1000);
@@ -87,6 +91,10 @@ export function startGame(): boolean {
     messageBlock.textContent = 'Введите количество успешных попыток (больше 0)';
     return false;
   }
+
+  // Очищаем инпуты для умножения перед стартом игры
+  firstInput.value = '';
+  secondInput.value = '';
 
   // Только после всех проверок устанавливаем состояние игры как начатое
   gameStartedState.setGameStartedState(true);

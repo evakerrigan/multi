@@ -3,7 +3,7 @@ import {
   counterState,
   gameStartedState
 } from './utils/state';
-import {answerInput} from './utils/ui';
+import {answerInput, firstInput, secondInput} from './utils/ui';
 import {
   checkAnswer as checkAnswerUtil,
   startGame,
@@ -165,6 +165,10 @@ function handleWindowResize(): void {
 
 // Инициализация приложения
 document.addEventListener('DOMContentLoaded', () => {
+  // Очищаем инпуты для умножения при инициализации
+  firstInput.value = '';
+  secondInput.value = '';
+
   // Инициализируем значения инпутов из состояния
   const initialAttemptsInput = document.getElementById(
     'attempts-input'
