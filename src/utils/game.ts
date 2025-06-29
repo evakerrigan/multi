@@ -56,8 +56,11 @@ export function checkAnswer(): void {
   } else {
     counterState.incrementBadCount();
     updateCounters();
-    showFailureEffect();
-    messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
+    messageBlock.textContent = '';
+    showFailureEffect();    
+    setTimeout(() => {
+      messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
+    }, 1000);
   }
 
   const attemptsTarget = counterState.getAttemptsCount();
