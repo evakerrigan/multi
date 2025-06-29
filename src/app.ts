@@ -370,11 +370,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', handleWindowResize);
 
   if (mobileKeyboard && answerInputEl) {
-    mobileKeyboard.addEventListener('click', (event) => {
+    // Функция для обработки нажатий на клавиши
+    const handleKeyPress = (event: Event) => {
       const target = event.target as HTMLElement;
-      if (!target.classList.contains('mobile-key')) return;
-      const key = target.getAttribute('data-key');
+
+      // Ищем ближайший элемент с классом mobile-key (кнопка)
+      const mobileKey = target.closest('.mobile-key');
+      if (!mobileKey) return;
+
+      const key = mobileKey.getAttribute('data-key');
       if (!key) return;
+
       if (key === 'del') {
         answerInputEl.value = answerInputEl.value.slice(0, -1);
       } else if (key === 'ok') {
@@ -386,6 +392,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       // Фокусируем поле, чтобы курсор был виден
       answerInputEl.focus();
-    });
+    };
+
+    // Обработчик кликов
+    mobileKeyboard.addEventListener('click', handleKeyPress);
+
+    // Обработчик touch событий для лучшей отзывчивости на мобильных
+    mobileKeyboard.addEventListener(
+      'touchstart',
+      (event) => {
+        // Предотвращаем двойное срабатывание
+        event.preventDefault();
+      },
+      {passive: false}
+    );
+
+    mobileKeyboard.addEventListener('touchend', handleKeyPress);
   }
 });
