@@ -3,7 +3,7 @@
   width: 50px;
   position: relative;
   font-size: 2rem;
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', sans-serif;
   border: none;
   background-color: #282c35;
   border-bottom: 1px solid #aaa;
