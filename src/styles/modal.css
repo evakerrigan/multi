@@ -24,6 +24,15 @@
   border-radius: 4px;
 }
 
+.modal-title {
+  padding-left: 30px;
+  line-height: 0;
+}
+
+.modal-message {
+  padding-left: 30px;
+}
+
 .modal-image {
   border: 1px solid #6cade5;
   max-width: 100%;
@@ -125,6 +134,13 @@ ul.modal-instruction-list {
   }
   .settings-button:hover {
     background-color: rgba(108, 173, 229, 0.7);
+  }
+  .modal-title {
+    padding-left: 0px;
+  }
+
+  .modal-message {
+    padding-left: 0px;
   }
 }
 
