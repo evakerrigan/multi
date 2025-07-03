@@ -6,6 +6,7 @@ import {
   updateInstructionTextState
 } from './state';
 import {resetInputs, removeListItemSelectedClasses, updateCounters} from './ui';
+import {handleWindowResize} from '../app';
 
 export function openModal(): void {
   const randomGifNumber = getRandomGifNumber();
@@ -68,14 +69,8 @@ export function closeModalSuccess(): void {
     successCheckmark.style.display = 'none';
 
     // Возврат к экрану настройки на мобильных устройствах
-    // Теперь эта логика обрабатывается в handleWindowResize
-    const mobileSetupScreen = document.getElementById('mobile-setup-screen');
-    const mainGameScreen = document.getElementById('main-game-screen');
-
-    if (mobileSetupScreen && mainGameScreen && window.innerWidth <= 639) {
-      mobileSetupScreen.style.display = 'flex';
-      mainGameScreen.classList.remove('mobile-active');
-    }
+    // Вызываем handleWindowResize для правильного переключения экранов
+    handleWindowResize();
 
     // Обновляем UI для синхронизации всех элементов с состоянием
     updateInstructionTextState();

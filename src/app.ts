@@ -140,7 +140,7 @@ function updateReadonlyState(): void {
 }
 
 // Функция для обработки ресайза окна и переключения экранов
-function handleWindowResize(): void {
+export function handleWindowResize(): void {
   const mobileSetupScreen = document.getElementById('mobile-setup-screen');
   const mainGameScreen = document.getElementById('main-game-screen');
 
@@ -150,11 +150,15 @@ function handleWindowResize(): void {
       mobileSetupScreen.style.display = 'none';
       mainGameScreen.classList.remove('mobile-active');
     } else {
-      // Если окно стало уже 640px, показываем мобильный экран настройки
-      // только если игра не началась
+      // Если окно стало уже 640px
       if (!gameStartedState.getGameStartedState()) {
+        // Если игра не началась, показываем мобильный экран настройки
         mobileSetupScreen.style.display = 'flex';
         mainGameScreen.classList.remove('mobile-active');
+      } else {
+        // Если игра уже началась, показываем основной экран с мобильным классом
+        mobileSetupScreen.style.display = 'none';
+        mainGameScreen.classList.add('mobile-active');
       }
     }
   }
@@ -372,6 +376,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Добавляем слушатель изменения размера окна
   window.addEventListener('resize', handleWindowResize);
+
+  // Инициализируем правильное состояние экранов при загрузке
+  handleWindowResize();
 
   if (mobileKeyboard && answerInputEl) {
     // Функция для обработки нажатий на клавиши
