@@ -58,12 +58,13 @@ export function checkAnswer(): void {
     showSuccessEffect();
     messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ верный. ${expectedResult}`;
   } else {
+    const beforeMessage = `${firstInput.value} x ${secondInput.value}`;
     counterState.incrementBadCount();
     updateCounters();
-    messageBlock.textContent = '';
+    messageBlock.textContent = '';    
     showFailureEffect();
     setTimeout(() => {
-      messageBlock.textContent = `${firstInput.value} x ${secondInput.value} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
+      messageBlock.textContent = `${beforeMessage} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
     }, 1000);
   }
 
