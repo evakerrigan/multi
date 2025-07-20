@@ -44,6 +44,16 @@ export function checkAnswer(): void {
 
   // Проверяем пустой ответ ДО увеличения счетчика
   if (isNaN(answer)) {
+    const successCheckmark = document.getElementById(
+      'success-checkmark'
+    ) as HTMLElement;
+    const failureCheckmark = document.getElementById(
+      'failure-checkmark'
+    ) as HTMLElement;
+
+    failureCheckmark.style.display = 'flex';
+    successCheckmark.style.display = 'none';
+
     messageBlock.textContent = 'Ответ не может быть пустым';
     return;
   }
@@ -61,7 +71,7 @@ export function checkAnswer(): void {
     const beforeMessage = `${firstInput.value} x ${secondInput.value}`;
     counterState.incrementBadCount();
     updateCounters();
-    messageBlock.textContent = '';    
+    messageBlock.textContent = '';
     showFailureEffect();
     setTimeout(() => {
       messageBlock.textContent = `${beforeMessage} = ${answer}. Ответ неверный. Правильный ответ: ${expectedResult}`;
