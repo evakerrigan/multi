@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://easymultiply.com/sitemap.xml
+
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /dist/
